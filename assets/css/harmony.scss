@@ -1,0 +1,238 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+$bgcolor: #fff;
+$textcolor: #000;
+$fontsize: 18px;
+$btncolorPrimary: #ee3f36;
+$btncolorSecondary: #fff;
+$iconcolor: #ee3f36;
+$titlecolor: #000;
+$primaryColor: #ee3f36;
+
+/*=========General=============*/
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  max-width: 1140px;
+}
+@font-face {
+  font-family: Estedad;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot");
+  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Bold.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../fonts/estedad/woff2/Estedad-FD-Bold.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: Estedad;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/estedad/eot/Estedad-FD-Light.eot");
+  src: url("../fonts/estedad/eot/Estedad-FD-Light.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Light.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../fonts/estedad/woff2/Estedad-FD-Light.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: Estedad;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/estedad/eot/Estedad-FD-Regular.eot");
+  src: url("../fonts/estedad/eot/Estedad-FD-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Regular.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../fonts/estedad/woff2/Estedad-FD-Regular.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: Estedad;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot");
+  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Bold.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../fonts/estedad/woff2/Estedad-FD-Bold.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+  font-style: normal;
+  font-family: Estedad;
+}
+ul {
+  padding-right: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+h2 {
+  font-size: 32px;
+  line-height: 2;
+  color: #14317a;
+  margin: 2rem 0;
+  text-align: center;
+}
+h3 {
+  font-size: 24px;
+  line-height: 2;
+  color: #14317a;
+  margin: 2rem 0;
+}
+img,
+svg {
+  max-width: 100%;
+}
+a {
+  transition: all 0.5s;
+  color: #000;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  transition: all 0.5s;
+  border: none;
+}
+a:focus,
+button:focus {
+  border: none;
+  outline: 0;
+}
+
+p {
+  font-size: $fontsize;
+  line-height: 2;
+  text-align: justify;
+  text-align-last: center;
+}
+ul {
+  padding-right: 0;
+  list-style: none;
+}
+
+input:active,
+input:focus,
+select:focus,
+select:active {
+  outline: 0;
+}
+
+.display-flex {
+  display: inline-flex;
+  width: 100%;
+}
+.wrapper {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-size: contain;
+}
+.btn-primary {
+  color: #fff;
+  background-color: $btncolorPrimary;
+  border-color: $btncolorPrimary;
+  border-radius: 5px;
+  padding: 10px 60px;
+  width: fit-content;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: $btncolorSecondary;
+  border-color: $btncolorSecondary;
+  border: 1px solid;
+}
+.btn-secondary {
+  color: #000;
+  background-color: $btncolorSecondary;
+  border-color: $btncolorSecondary;
+  border-radius: 5px;
+  padding: 10px 60px;
+  width: fit-content;
+}
+
+.btn-secondary:hover {
+  color: #000;
+  background-color: $btncolorPrimary;
+  border-color: $btncolorPrimary;
+  border: 1px solid;
+}
+.btn-slide {
+  background-color: 78ed13;
+  border: unset;
+  padding: 10px 30px;
+  margin: 0 20px;
+}
+section {
+  padding: 2rem 0;
+}
+.content-center {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+.form-bg {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+.form-pd-center {
+  padding: 10px 20px;
+  margin: 20px 10px;
+  text-align: center;
+}
+.form-group {
+  margin: 20px 0;
+}
+.form-control {
+  border-radius: 10px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+}
+.copyright img:hover {
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg)
+    saturate(1000%) contrast(0.8);
+}
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  h2 {
+    font-size: 24px;
+    margin: 1rem 0;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 1rem 0;
+  }
+  p {
+    font-size: 14px;
+  }
+}
