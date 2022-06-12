@@ -1,0 +1,25 @@
+/* font-weight: 300 */
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: 300;
+  src:  /* IE6-8 */ url("./iranyekanweblightfanum.woff") format("woff"),
+}
+
+
+/* font-weight normal */
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: normal;
+  src: /* IE6-8 */ url("./iranYekan/iranyekanwebregularfanum.woff") format("woff"),
+}
+
+/* font-weight bold */
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: bold;
+  src: /* IE6-8 */ url("./iranYekan/iranyekanwebboldfanum.woff") format("woff"),
+}
+
