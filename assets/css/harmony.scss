@@ -1,14 +1,70 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import "../../node_modules/bootstrap/scss/variables";
 
-$bgcolor: #fff;
-$textcolor: #000;
-$fontsize: 18px;
-$btncolorPrimary: #ee3f36;
-$btncolorSecondary: #fff;
-$iconcolor: #ee3f36;
-$titlecolor: #000;
-$primaryColor: #ee3f36;
+// change font link according to plan
+@import "../fonts/dana/dana.css";
+
+// scss-docs-start color-variables
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #FFC80A !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+) !default;
+// scss-docs-end colors-map
+
+// scss-docs-start theme-color-variables
+$primary:       $yellow !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+) !default;
+// scss-docs-end theme-colors-map
+
+
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
 
 /*=========General=============*/
 html {
@@ -17,61 +73,13 @@ html {
 .container {
   max-width: 1140px;
 }
-@font-face {
-  font-family: Estedad;
-  font-style: normal;
-  font-weight: bold;
-  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot");
-  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Bold.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../fonts/estedad/woff2/Estedad-FD-Bold.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
-}
-@font-face {
-  font-family: Estedad;
-  font-style: normal;
-  font-weight: 300;
-  src: url("../fonts/estedad/eot/Estedad-FD-Light.eot");
-  src: url("../fonts/estedad/eot/Estedad-FD-Light.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Light.woff")
-      format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../fonts/estedad/woff2/Estedad-FD-Light.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
-}
-
-@font-face {
-  font-family: Estedad;
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/estedad/eot/Estedad-FD-Regular.eot");
-  src: url("../fonts/estedad/eot/Estedad-FD-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Regular.woff")
-      format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../fonts/estedad/woff2/Estedad-FD-Regular.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
-}
-
-@font-face {
-  font-family: Estedad;
-  font-style: normal;
-  font-weight: 800;
-  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot");
-  src: url("../fonts/estedad/eot/Estedad-FD-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../fonts/estedad/woff/Estedad-FD-Bold.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../fonts/estedad/woff2/Estedad-FD-Bold.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
-}
 
 body {
   direction: rtl;
   text-align: right;
   overflow-x: hidden;
   font-style: normal;
-  font-family: Estedad;
+  font-family: dana;
 }
 ul {
   padding-right: 0;
@@ -105,7 +113,6 @@ svg {
 a {
   transition: all 0.5s;
   color: #000;
-  transition: all 0.5s;
   text-decoration: none;
 }
 a:hover {
@@ -120,7 +127,7 @@ button:focus {
 }
 
 p {
-  font-size: $fontsize;
+  font-size: 14px;
   line-height: 2;
   text-align: justify;
   text-align-last: center;
@@ -146,36 +153,8 @@ select:active {
   overflow-y: hidden;
   background-size: contain;
 }
-.btn-primary {
-  color: #fff;
-  background-color: $btncolorPrimary;
-  border-color: $btncolorPrimary;
-  border-radius: 5px;
-  padding: 10px 60px;
-  width: fit-content;
-}
 
-.btn-primary:hover {
-  color: #fff;
-  background-color: $btncolorSecondary;
-  border-color: $btncolorSecondary;
-  border: 1px solid;
-}
-.btn-secondary {
-  color: #000;
-  background-color: $btncolorSecondary;
-  border-color: $btncolorSecondary;
-  border-radius: 5px;
-  padding: 10px 60px;
-  width: fit-content;
-}
 
-.btn-secondary:hover {
-  color: #000;
-  background-color: $btncolorPrimary;
-  border-color: $btncolorPrimary;
-  border: 1px solid;
-}
 .btn-slide {
   background-color: 78ed13;
   border: unset;
@@ -190,6 +169,8 @@ section {
   align-self: center;
   flex-direction: column;
 }
+
+// form styles
 .form-bg {
   background-color: #fff;
   border-radius: 10px;
@@ -210,13 +191,20 @@ section {
   color: red;
   font-size: 14px;
 }
-.copyright img:hover {
-  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg)
-    saturate(1000%) contrast(0.8);
+.success-submit {
+  color: #198754;
 }
+
+// copy right
+// .copyright img:hover {
+//   filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg)
+//     saturate(1000%) contrast(0.8);
+// }
+
 .mobile {
   display: none;
 }
+
 @media screen and (max-width: 768px) {
   .desktop {
     display: none;
@@ -235,4 +223,16 @@ section {
   p {
     font-size: 14px;
   }
+}
+
+// new styles
+// slide
+.slide-bg {
+  background-image: url(assets/images/slide-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
 }

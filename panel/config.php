@@ -4,7 +4,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname="joopa";
+$dbname="";
+$landingName="";
 
 try {
 

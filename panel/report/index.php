@@ -36,7 +36,7 @@ include "jdf.php";
 <?php 
 if(isset($_POST['excel_output']))
 {
-    if(isset($_POST['pass']) && md5($_POST['pass'])== "5e65084fcd8984ac2cac43cf98db70f1"){
+    if(isset($_POST['pass']) && md5($_POST['pass'])== "..."){
        $res_list = [];
        $sql_order="SELECT * FROM subscribers ORDER BY date DESC";
        print_r($sql_order);
@@ -45,12 +45,14 @@ if(isset($_POST['excel_output']))
 
           foreach($res->fetchAll() as $row){
              $res_list[] = [
-            'name' => $row['name'],
-            'phone' => $row['phone'],
-            'utm_source' =>  $row['utm_source'],
-            'utm_medium' =>  $row['utm_medium'],
-            'utm_campaign' =>  $row['utm_campaign'],
-            'date' => jdate("Y/m/d H:i:s", strtotime($row['date']), '', 'Iran', 'en'),
+                'name' => $row['name'],
+                'phone' => $row['phone'],
+                'utm_source' =>  $row['utm_source'],
+                'utm_medium' =>  $row['utm_medium'],
+                'utm_term' =>  $row['utm_term'],
+                'utm_content' =>  $row['utm_content'],
+                'utm_campaign' =>  $row['utm_campaign'],
+                'date' => jdate("Y/m/d H:i:s", strtotime($row['date']), '', 'Iran', 'fa'),
 
              ];
           } 
@@ -80,12 +82,12 @@ function xlsx_export( $res_data )
       $objSpreadsheet = new PhpOffice\PhpSpreadsheet\Spreadsheet();
 
       // Set document properties
-      $objSpreadsheet->getProperties()->setCreator("LFA excel")
-                    ->setLastModifiedBy("file excel landing LFA")
-                    ->setTitle("'گزارش خروجی اکسل لندینگ LFA'")
-                    ->setSubject("گزارش لندینگ LFA")
+      $objSpreadsheet->getProperties()->setCreator("$LandingName excel")
+                    ->setLastModifiedBy("file excel landing $LandingName")
+                    ->setTitle("'گزارش خروجی اکسل لندینگ $LandingName'")
+                    ->setSubject("گزارش لندینگ $LandingName")
                     ->setDescription("این یک گزارش کامل از امرون می باشد")
-                    ->setKeywords("LFA");
+                    ->setKeywords("$LandingName");
 
       // Add some data
       $objSpreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(20);
@@ -95,24 +97,28 @@ function xlsx_export( $res_data )
       $objSpreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(20);
       $objSpreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(20);
       $objSpreadsheet->setActiveSheetIndex(0)
-                  ->setCellValue('A1', 'نام')
-                  ->setCellValue('B1', 'شماره تماس')
-                  ->setCellValue('C1', 'utm_source')
-                  ->setCellValue('D1', 'utm_medium')
-                  ->setCellValue('E1', 'utm_campaign')
-                  ->setCellValue('F1', 'تاریخ');
+                     ->setCellValue('A1', 'نام')
+                     ->setCellValue('B1', 'شماره تماس')
+                     ->setCellValue('C1', 'utm_source')
+                     ->setCellValue('D1', 'utm_medium')
+                     ->setCellValue('E1', 'utm_campaign')
+                     ->setCellValue('F1', 'utm_term')
+                     ->setCellValue('G1', 'utm_content')
+                     ->setCellValue('H1', 'تاریخ');
 
       
       $row = 2;
       foreach($res_data as $res_data_item)
       {
          $objSpreadsheet->setActiveSheetIndex(0)
-                        ->setCellValue('A'.$row, $res_data_item['name'])
-                        ->setCellValue('B'.$row, $res_data_item['phone'])
-                        ->setCellValue('C'.$row, $res_data_item['utm_source'])
-                        ->setCellValue('D'.$row, $res_data_item['utm_medium'])
-                        ->setCellValue('E'.$row, $res_data_item['utm_campaign'])
-                        ->setCellValue('F'.$row, $res_data_item['date']);
+                         ->setCellValue('A'.$row, $res_data_item['name'])
+                         ->setCellValue('B'.$row, $res_data_item['phone'])
+                         ->setCellValue('C'.$row, $res_data_item['utm_source'])
+                         ->setCellValue('D'.$row, $res_data_item['utm_medium'])
+                         ->setCellValue('E'.$row, $res_data_item['utm_campaign'])
+                         ->setCellValue('F'.$row, $res_data_item['utm_term'])
+                         ->setCellValue('G'.$row, $res_data_item['utm_content'])
+                         ->setCellValue('H'.$row, $res_data_item['date']);
          $row++;
       }
 
@@ -127,7 +133,7 @@ function xlsx_export( $res_data )
       ob_clean();
 			ob_start();
       header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-      header('Content-Disposition: attachment;filename="LFA-Report.xlsx"');
+      header('Content-Disposition: attachment;filename="'.$LandingName.'-Report.xlsx"');
       header('Cache-Control: max-age=0');
 
       // If you're serving to IE over SSL, then the following may be needed

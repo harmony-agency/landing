@@ -4,13 +4,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>عنوان</title>
-    <link rel="stylesheet" href="assets/css/harmony.min.css" />
-    <!-- <link rel="stylesheet" href="assets/css/swiper.min.css" /> -->
+    <link rel="icon" type="icon" href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/harmony.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" type="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/aos.css" />
   </head>
   <body>
+    
+    <!-- Design by Harmony Agency -->
     <div class="wrapper">
+      <!-- header sticky -->
+      <header>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+              <a href="" target="_blank">
+                <img src="assets/images/logo.png" loading="lazy" alt="" />
+              </a>
+            </div>
+            <a class="btn callToAction" href="#">call to action</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- navbar -->
       <nav class="navbar">
         <div class="container">
           <a class="navbar-brand" href="#">
@@ -20,71 +39,481 @@
         </div>
       </nav>
 
-      <section id="slide"></section>
-
-      <section id="register">
-        <div class="form-bg form-pd-center">
-          <h3>فرم ثبت‌نام در طرح بیمه شخص ثالث</h3>
-          <form id="subscriber">
-            <div class="form-group">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                class="form-control"
-                placeholder="نام و نام خانوادگی"
-              />
+      <!-- motion -->
+      <section id="meeting">
+        <div class="container">
+          <div class="meeting row">
+            <div class="content">
+              <div class="row">
+                <div class="col-md-6 col-sm-12 caption">
+                  <h2 class="text-center section-title">motion</h2>
+                  <p>caption</p>
+                </div>
+                <div class="col-md-6 col-sm-12 videoBox">
+                  <div
+                    class="video-img"
+                    data-bs-toggle="modal"
+                    data-bs-target="#motion"
+                  >
+                    <img
+                      src="assets/images/videoImg.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
+                  <!-- Motion Modal -->
+                  <div
+                    class="modal fade motion-modal"
+                    id="motion"
+                    data-bs-backdrop="static"
+                    data-bs-keyboard="false"
+                    tabindex="-1"
+                    aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="motionVideo">
+                            <video controls>
+                              <source src="./assets/video/" type="video/mp4" />
+                            </video>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                class="form-control"
-                placeholder="شماره تماس"
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="test"
-                name="city"
-                id="city"
-                class="form-control"
-                placeholder="شهر/استان"
-              />
-            </div>
-            <p>
-              پس از تکمیل فرم، مشاورین ما نهایتا بعد از 72 ساعت با شما تماس
-              خواهند گرفت
-            </p>
-            <button type="submit" class="btn btn-primary">ثبت نام</button>
-          </form>
-          <div class="error-submit"></div>
-          <div class="result"></div>
+          </div>
         </div>
       </section>
-      <footer>
-        <div class="footer-logo">
-          <img src="assets/images/footer-logo.png" loading="lazy" alt="" />
+
+      <!-- counter -->
+      <section id="counter">
+        <div class="container text-center">
+          <h2 class="text-center section-title">counter</h2>
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <div class="value counter">1000</div>
+              <div class="counterTitle">title</div>
+              <div class="counterCaption">caption</div>
+              <hr class="mobile" />
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="value counter">1000</div>
+              <div class="counterTitle">title</div>
+              <div class="counterCaption">caption</div>
+              <hr class="mobile" />
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="value counter">1000</div>
+              <div class="counterTitle">title</div>
+              <div class="counterCaption">caption</div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="value counter">1000</div>
+              <div class="counterTitle">title</div>
+              <div class="counterCaption">caption</div>
+            </div>
+          </div>
         </div>
-        <ul class="contact">
-          <li></li>
-          <li></li>
-        </ul>
-        <div class="copyright">
-          <a
-            href="https://harmony.agency/?utm_source=designbyharmony&utm_medium=badge&utm_campaign="
-            rel="nofollow,noindex"
-            target="_blank"
-            ><img src="assets/images/harmony.png" loading="lazy" alt=""
-          /></a>
+      </section>
+
+      <!-- Design by Harmony Agency -->
+
+      <!-- package -->
+      <section id="package">
+        <div class="container">
+          <h2 class="text-center section-title">packages</h2>
+          <div class="package-items">
+            <div class="row">
+              <div class="col-md-4 col-sm-12 notzoom">
+                <div class="p-item">
+                  <div class="header pLeft">title</div>
+                  <div class="caption">caption</div>
+                  <div class="buyBox">
+                    <a
+                      href="https://www.skyroom.online/skyroom/order"
+                      target="_blank"
+                      class="buy"
+                    >
+                      button
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 zoom middleBox" id="freePackage">
+                <div class="p-item">
+                  <div class="header pLeft">title</div>
+                  <div class="caption">caption</div>
+                  <div class="buyBox">
+                    <a
+                      href="https://www.skyroom.online/skyroom/order"
+                      target="_blank"
+                      class="buy"
+                    >
+                      button
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 notzoom">
+                <div class="p-item">
+                  <div class="header pLeft">title</div>
+                  <div class="caption">caption</div>
+                  <div class="buyBox">
+                    <a
+                      href="https://www.skyroom.online/skyroom/order"
+                      target="_blank"
+                      class="buy"
+                    >
+                      button
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- register -->
+      <section id="register">
+        <div class="container position-relative">
+          <div class="form-bg form-pd-center">
+            <h2 class="section-title text-center">فرم ثبت نام</h2>
+            <p>توضیحات فرم ثبت نام</p>
+            <form id="subscriber">
+              <div class="form-group position-relative">
+                <i class="far fa-user iconPlaceholder"></i>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="form-control"
+                  placeholder="نام و نام خانوادگی"
+                />
+              </div>
+              <div class="form-group">
+                <i class="fas fa-phone iconPlaceholder"></i>
+
+                <input
+                  type="number"
+                  name="phone"
+                  id="phone"
+                  class="form-control"
+                  placeholder="0919..."
+                />
+              </div>
+              <button type="submit" class="btn btn-register">ثبت‌نام</button>
+            </form>
+            <div class="errorValidate"></div>
+            <div class="result"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design by Harmony Agency -->
+
+      <!-- brands -->
+      <section id="brands" class="py">
+        <div class="container">
+          <div class="brands-items">
+            <div class="row">
+              <div class="col-2">
+                <div class="p-item text-center">
+                  <img
+                    src="assets/images/snappLogo.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <!--col-2-->
+              <div class="col-2">
+                <div class="p-item text-center">
+                  <img
+                    src="assets/images/hamkaranLogo.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <!--col-2-->
+              <div class="col-2">
+                <div class="p-item text-center">
+                  <img
+                    src="assets/images/managmentLogo.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <!--col-2-->
+              <div class="col-2">
+                <div class="p-item text-center">
+                  <img
+                    src="assets/images/zamzamLogo.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <!--col-2-->
+              <div class="col-2">
+                <div class="p-item text-center">
+                  <img src="assets/images/kspLogo.png" alt="" loading="lazy" />
+                </div>
+              </div>
+              <!--col-2-->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--testimonial-->
+      <section id="testimonial">
+        <div class="container">
+          <div class="swiper mySwiper">
+            <h2 class="section-title text-center">نظرات مشتریان</h2>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-slide">
+                  <div class="testimonialHeader d-flex align-items-center">
+                    <div class="slideImg">
+                      <img
+                        src="assets/images/profile.png"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="testimonial-title">
+                      <p class="t-name">نام و نام خانوادگی</p>
+                      <p class="customer">مشتری</p>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                    با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                    و مجله در ستون و سطرآنچنان که لازم است وه از طراحان گرافیک
+                    است.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-slide">
+                  <div class="testimonialHeader d-flex align-items-center">
+                    <div class="slideImg">
+                      <img
+                        src="assets/images/profile.png"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="testimonial-title">
+                      <p class="t-name">نام و نام خانوادگی</p>
+                      <p class="customer">مشتری</p>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                    با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                    و مجله در ستون و سطرآنچنان که لازم است وه از طراحان گرافیک
+                    است.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-slide">
+                  <div class="testimonialHeader d-flex align-items-center">
+                    <div class="slideImg">
+                      <img
+                        src="assets/images/profile.png"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="testimonial-title">
+                      <p class="t-name">نام و نام خانوادگی</p>
+                      <p class="customer">مشتری</p>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                    با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                    و مجله در ستون و سطرآنچنان که لازم است وه از طراحان گرافیک
+                    است.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design by Harmony Agency -->
+
+      <!-- faq -->
+      <section id="faq">
+        <div class="container">
+          <h2 class="section-title text-center">سوالات متداول</h2>
+          <div class="accordion" id="myAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  type="button"
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                >
+                  <span>title1</span>
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#myAccordion"
+              >
+                <div class="card-body">
+                  <p>caption1</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  type="button"
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                >
+                  <span> title2</span>
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#myAccordion"
+              >
+                <div class="card-body">
+                  <p>caption2</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  type="button"
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                >
+                  <span> title3 </span>
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#myAccordion"
+              >
+                <div class="card-body">
+                  <p>caption3</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  type="button"
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                >
+                  <span> title4 </span>
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                data-bs-parent="#myAccordion"
+              >
+                <div class="card-body">
+                  <p>caption4</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer>
+        <div class="footerBg">
+          <div class="content">
+            <div>
+              <a href="" target="_blank">
+                <img
+                  src="assets/images/footerLogo.png"
+                  loading="lazy"
+                  alt=""
+                  class="footerLogo"
+                />
+              </a>
+            </div>
+            <div class="socialMedia">
+              <div>
+                <a target="_blank" href="">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+              <div>
+                <a target="_blank" href="">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+            <div class="copyright text-center">
+              <a
+                href="https://harmony.agency/?utm_source=designbyharmony&amp;utm_medium=badge&amp;utm_campaign=landingName"
+                target="_blank"
+              >
+                <img
+                  class="logo"
+                  src="assets/images/harmonyLogo.png"
+                  loading="lazy"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
+
+    <!-- Design by Harmony Agency -->
+
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
-    <!-- <script src="assets/js/jquery.easing.min.js"></script> -->
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/jquery.validate.min.js"></script>
-    <!-- <script src="assets/js/swiper.min.js"></script> -->
+    <script src="assets/js/waypoint.js"></script>
+    <script src="assets/js/jquery.countup.min.js"></script>
     <script src="assets/js/harmony.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

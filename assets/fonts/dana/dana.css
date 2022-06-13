@@ -1,0 +1,31 @@
+/* font-weight: 300 */
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 300;
+  src:  /* IE6-8 */ url("./Dana-FaNum-Light.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("./Dana-FaNum-Light.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+
+
+/* font-weight normal */
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: normal;
+  src: /* IE6-8 */ url("./Dana-FaNum-Medium.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("./Dana-FaNum-Medium.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+
+/* font-weight bold */
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: bold;
+  src: /* IE6-8 */ url("./Dana-FaNum-Bold.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("./Dana-FaNum-Bold.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+
