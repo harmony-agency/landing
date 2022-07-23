@@ -87,8 +87,11 @@ function form_submit() {
     encode: true,
   }).done(function (data) {
     if (data["success"] == true) {
+      // used by Google Tag Manager
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "formSubmission" });
+      window.dataLayer.push({
+        event: "formSubmission"
+      });
       $("#register .error-submit").hide();
       $("#subscriber").hide();
       $("#register .result").html(

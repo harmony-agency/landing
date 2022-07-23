@@ -65,6 +65,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -167,17 +170,17 @@ address {
   line-height: inherit;
 }
 
-ol,
+/* ol,
 ul {
   padding-left: 2rem;
-}
+} */
 
-ol,
+/* ol,
 ul,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
-}
+} */
 
 ol ol,
 ul ul,
