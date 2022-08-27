@@ -3,9 +3,9 @@
   font-family: iranSans;
   font-style: normal;
   font-weight: 300;
-  src:  /* IE6-8 */ url("./IRANSansX-Light.woff") format("woff"),
+  src:  /* IE6-8 */ url("./IRANSansWeb-FaNum.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("./IRANSansX-Light.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+      url("./IRANSansWeb-FaNum.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
 }
 
 
@@ -14,9 +14,9 @@
   font-family: iranSans;
   font-style: normal;
   font-weight: normal;
-  src: /* IE6-8 */ url("./IRANSansX-Regular.woff") format("woff"),
+  src: /* IE6-8 */ url("./IRANSansWeb-FaNum.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("./IRANSansX-Regular.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+      url("./IRANSansWeb-FaNum.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
 }
 
 /* font-weight bold */

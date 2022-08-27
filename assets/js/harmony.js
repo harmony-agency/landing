@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("#subscriber").validate({
     // initialize the plugin
     rules: {
-      name: {
+      fullName: {
         required: true,
       },
       phone: {
@@ -10,9 +10,15 @@ $(document).ready(function () {
         minlength: 11,
         maxlength: 11,
       },
+      organName: {
+        required: true,
+      },
+      position: {
+        required: true,
+      },
     },
     messages: {
-      name: {
+      fullName: {
         required: "لطفا نام خود را وارد کنید",
       },
       phone: {
@@ -20,24 +26,17 @@ $(document).ready(function () {
         minlength: "شماره تماس وارد شده معتبر نیست",
         maxlength: "شماره تماس وارد شده معتبر نیست",
       },
+      organName: {
+        required: "لطفا نام سازمان خود را وارد کنید",
+      },
+      position: {
+        required: "لطفا سمت سازمانی خود را وارد کنید",
+      },
     },
     submitHandler: function () {
       form_submit();
     },
   });
-
-  // hover package
-  $(".middleBox").hover(
-    function () {
-      $(this).css("transform", "scale(1.1)");
-      $(this).css("transition", "1s");
-    },
-    function () {
-      $(this).css("transform", "scale(1)");
-      $(this).css("transition", "1s");
-      $(this).removeClass("zoom");
-    }
-  );
 });
 
 (function ($) {
@@ -69,9 +68,11 @@ if (location.search != "") {
 }
 
 function form_submit() {
+  console.log("data");
   var formDataSubscriber = {
-    name: $("#subscriber #name").val(),
-    phone: $("#subscriber #phone").val(),
+    fullName: $("#subscriber #fullName").val(),
+    phone: persianToEnglish($("#subscriber #phone").val()),
+    email: $("#subscriber #email").val(),
     utm_source: sessionStorage.getItem("utm_source"),
     utm_campaign: sessionStorage.getItem("utm_medium"),
     utm_medium: sessionStorage.getItem("utm_campaign"),
@@ -87,39 +88,47 @@ function form_submit() {
     encode: true,
   }).done(function (data) {
     if (data["success"] == true) {
-      // used by Google Tag Manager
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "formSubmission"
-      });
-      $("#register .error-submit").hide();
+      // window.dataLayer = window.dataLayer || [];
+      // window.dataLayer.push({
+      //   event: "formSubmission",
+      // });
+      $(".error-submit").hide();
+      $("#subscriber .caption").hide();
       $("#subscriber").hide();
-      $("#register .result").html(
-        '<div class="success-submit">' + data["message"] + "</div>"
+      $(".result").html(
+        "اطلاعات شما ثبت شد<br>کارشناسان ما به زودی با شما تماس خواهند گرفت"
       );
     } else {
-      $("#register .error-submit").show();
-      $("#register .error-submit").html(data["message"]);
+      $(".error-submit").show();
+      $(".error-submit").html(data["message"]);
     }
   });
 }
 
-$("#subscriber #phone").keyup(function (e) {
-  $("#subscriber #phone").val(persianToEnglish($(this).val()));
-});
+/*===================================== persianNumbers =====================================*/
+var persianNumbers = [
+    /۰/g,
+    /۱/g,
+    /۲/g,
+    /۳/g,
+    /۴/g,
+    /۵/g,
+    /۶/g,
+    /۷/g,
+    /۸/g,
+    /۹/g,
+  ],
+  arabicNumbers = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g],
+  persianToEnglish = function (str) {
+    if (typeof str === "string") {
+      for (var i = 0; i < 10; i++) {
+        str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
+      }
+    }
+    return str;
+  };
 
-function persianToEnglish(input) {
-  var inputstring = input;
-  var persian = ["١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩", "٠"];
-  var english = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  for (var i = 0; i < 10; i++) {
-    var regex = new RegExp(persian[i], "g");
-    inputstring = inputstring.toString().replace(regex, english[i]);
-  }
-  return inputstring;
-}
-
-// hover for copy right
+/*===================================== copy_right =====================================*/
 $(".copyright a").hover(
   function () {
     let logo = $(".copyright .hover-company");
@@ -131,10 +140,10 @@ $(".copyright a").hover(
   }
 );
 
-// stickyHeader
+/*===================================== stickyHeader =====================================*/
 jQuery(function ($) {
   $(window).on("scroll", function () {
-    if ($(this).scrollTop() > 100 && $(this).scrollTop() < 4300) {
+    if ($(this).scrollTop() > 100 && $(this).scrollTop() < 2300) {
       $("header").addClass("stickyHeader");
     } else {
       $("header").removeClass("stickyHeader");
@@ -142,23 +151,14 @@ jQuery(function ($) {
   });
 });
 
-// Aos animation
-AOS.init();
-
-//  counter
-$(".counter").counterUp({
-  delay: 5,
-  time: 1000,
-});
-
-
-
-//  testimonial carousels
+/*===================================== swiper =====================================*/
 var swiper = new Swiper(".mySwiper", {
   autoplay: {
-    delay: 6000,
+    delay: 3000,
     disableOnInteraction: false,
   },
+  slidesPerView: 6,
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -167,3 +167,31 @@ var swiper = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
   },
 });
+
+/*===================================== counter =====================================*/
+$(".counter").counterUp({
+  delay: 5,
+  time: 1000,
+});
+
+// Click event for any anchor tag that's href starts with #
+$("a").click(function (event) {
+  // The id of the section we want to go to.
+  var id = $(this).attr("href");
+
+  // An offset to push the content down from the top.
+  var offset = 200;
+
+  // Our scroll target : the top position of the
+  // section that has the id referenced by our href.
+  var target = $(id).offset().top - offset;
+
+  // The magic...smooth scrollin' goodness.
+  $("html, body").animate({ scrollTop: target }, 0);
+
+  //prevent the page from jumping down to our section.
+  event.preventDefault();
+});
+
+/*===================================== Aos animation =====================================*/
+AOS.init();

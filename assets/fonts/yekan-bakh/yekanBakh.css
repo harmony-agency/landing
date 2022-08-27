@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Yekan-Bakh";
+  src: url("./Yekan-Bakh-FaNum-Regular.eot");
+  src: url("./Yekan-Bakh-FaNum-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("./Yekan-Bakh-FaNum-Regular.woff") format("woff"),
+    url("./Yekan-Bakh-FaNum-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Yekan-Bakh";
+  src: url("./Yekan-Bakh-FaNum-Bold.eot");
+  src: url("./Yekan-Bakh-FaNum-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./Yekan-Bakh-FaNum-Bold.woff") format("woff"),
+    url("./Yekan-Bakh-FaNum-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

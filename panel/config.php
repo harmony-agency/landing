@@ -5,7 +5,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname="";
-$landingName="";
+$LandingName="";
 
 try {
 

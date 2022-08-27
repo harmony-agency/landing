@@ -513,14 +513,51 @@ button.accordion-button {
 }
 
 /*================================ footer ================================*/
-footer .footerBg {
-  background-image: url("../images/footerBg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 90px 0 0;
+footer {
+  background: #24247a;
+  padding: 35px 0;
   text-align: center;
-  margin-left: 107px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-footer .footerBg .content .footerLogo {
-  width: 104px;
+footer img {
+  opacity: 0.7;
 }
+footer .harmonyLogo {
+  max-width: 70%;
+  opacity: 0.6;
+}
+footer .harmonyLogo:hover {
+  opacity: 1;
+}
+.copyright .hover-company {
+  opacity: 0;
+  overflow: hidden;
+  width: 0%;
+  height: 50px;
+  margin: 5px;
+  color: white;
+  -webkit-transition: width 1000ms ease-in, opacity 1s ease-out;
+  -moz-transition: width 1000ms ease-in, opacity 1s ease-out;
+  -o-transition: width 1000ms ease-in, opacity 1s ease-out;
+  transition: width 1000ms ease-in, opacity 1s ease-out;
+}
+.copyright .logo {
+  opacity: 0.7;
+}
+.copyright .logo {
+  width: 25px;
+}
+.copyright .hover-company.active {
+  opacity: 1;
+  width: 100%;
+}
+@media screen and (min-width: 678px) {
+  footer img {
+    max-width: 50%;
+    opacity: 0.8;
+    margin: 0 auto;
+  }
+}
+

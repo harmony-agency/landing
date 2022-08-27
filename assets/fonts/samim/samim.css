@@ -1,0 +1,30 @@
+/* font-weight: 300 */
+@font-face {
+  font-family: samim;
+  font-style: normal;
+  font-weight: 300;
+  src:  url("./Samim.ttf") ,
+    url("./Dana-FaNum-Light.woff2");
+}
+
+/* font-weight normal */
+@font-face {
+  font-family: samim;
+  font-style: normal;
+  font-weight: 500;
+  src: url("./Samim.ttf"),
+    url("./Samim-WOL.ttf"),
+    url("./Samim-FD.ttf"),
+    url("./Samim-FD-WOL.ttf"),
+}
+
+/* font-weight bold */
+@font-face {
+  font-family: samim;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./Samim-Bold-FD-WOL.ttf"),
+    url("./Samim-Bold-FD.ttf"),
+    url("./Samim-Bold-WOL.ttf"),
+    url("./Samim-Bold.ttf"),
+}
