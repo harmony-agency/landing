@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  $("#subscriber").validate({
+  $("#subscribers").validate({
     // initialize the plugin
     rules: {
-      fullName: {
+      name: {
         required: true,
       },
       phone: {
@@ -18,7 +18,7 @@ $(document).ready(function () {
       },
     },
     messages: {
-      fullName: {
+      name: {
         required: "لطفا نام خود را وارد کنید",
       },
       phone: {
@@ -70,9 +70,9 @@ if (location.search != "") {
 function form_submit() {
   console.log("data");
   var formDataSubscriber = {
-    fullName: $("#subscriber #fullName").val(),
-    phone: persianToEnglish($("#subscriber #phone").val()),
-    email: $("#subscriber #email").val(),
+    name: $("#subscribers #name").val(),
+    phone: persianToEnglish($("#subscribers #phone").val()),
+    email: $("#subscribers #email").val(),
     utm_source: sessionStorage.getItem("utm_source"),
     utm_campaign: sessionStorage.getItem("utm_medium"),
     utm_medium: sessionStorage.getItem("utm_campaign"),
@@ -93,8 +93,8 @@ function form_submit() {
       //   event: "formSubmission",
       // });
       $(".error-submit").hide();
-      $("#subscriber .caption").hide();
-      $("#subscriber").hide();
+      $("#subscribers .caption").hide();
+      $("#subscribers").hide();
       $(".result").html(
         "اطلاعات شما ثبت شد<br>کارشناسان ما به زودی با شما تماس خواهند گرفت"
       );
@@ -143,7 +143,7 @@ $(".copyright a").hover(
 /*===================================== stickyHeader =====================================*/
 jQuery(function ($) {
   $(window).on("scroll", function () {
-    if ($(this).scrollTop() > 100 && $(this).scrollTop() < 2300) {
+    if ($(this).scrollTop() > 100 && $(this).scrollTop() < 3000) {
       $("header").addClass("stickyHeader");
     } else {
       $("header").removeClass("stickyHeader");
@@ -153,21 +153,46 @@ jQuery(function ($) {
 
 /*===================================== swiper =====================================*/
 var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  centeredSlides: true,
+  grabCursor: true,
+  loop: true,
+  // effect: "fade",
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
   },
-  slidesPerView: 6,
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   pagination: {
     el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    // device's width >= 640
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    // device's width >= 768
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    // device's width >= 1024
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 50,
+    },
   },
 });
-
 /*===================================== counter =====================================*/
 $(".counter").counterUp({
   delay: 5,
@@ -195,3 +220,28 @@ $("a").click(function (event) {
 
 /*===================================== Aos animation =====================================*/
 AOS.init();
+
+/*===================================== setTimeout =====================================*/
+const showContent = setTimeout(myGreeting, 2000);
+function myGreeting() {
+  console.log("setTimeout");
+}
+/*===================================== clipboard =====================================*/
+var clipboard = new ClipboardJS(".clipboard");
+clipboard.on("success", function (e) {
+  $(".copyMsg").text("لینک کپی شد");
+
+  setTimeout(function () {
+    $(".copyMsg").empty();
+  }, 2500);
+});
+
+/*========================= pause video on click btn-close ==============================*/
+$(".motion").on("hidden.bs.modal", function () {
+  $(".motionVideo video").trigger("pause");
+});
+
+/*========================= scripts just for mobile view ==============================*/
+if (window.matchMedia("(max-width: 768px)").matches) {
+  console.log("mobile_view");
+}

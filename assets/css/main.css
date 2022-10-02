@@ -6,6 +6,21 @@ body {
   background-position: center;
   background-size: cover;
 }
+.btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none;
+}
+input:-internal-autofill-selected {
+  background-image: none !important;
+  background-color: #f1f1f1 !important;
+  color: none !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  background-image: none !important;
+  background-color: #f1f1f1 !important;
+  color: none !important;
+}
 /*============== callToAction and it's hover ==================*/
 
 .callToAction {
@@ -305,103 +320,9 @@ input[type="number"] {
 
 /*================================ testimonial ================================*/
 
-#testimonial .swiper {
+.swiper {
   width: 100%;
   height: 400px;
-}
-#testimonial .swiper h2 {
-  margin-bottom: 0;
-}
-
-#testimonial .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-#testimonial .testimonial-slide {
-  background: #ededed;
-  border-radius: 18px;
-  max-width: 60%;
-  padding: 24px 122px 34px;
-  text-align: right;
-  position: relative;
-}
-#testimonial .testimonial-slide .slideImg {
-  margin-bottom: 16px;
-}
-#testimonial .t-name {
-  font-weight: 500;
-  font-size: 14px;
-  color: #41444b;
-  margin-bottom: 0;
-  text-align-last: right;
-}
-#testimonial .customer {
-  font-weight: 300;
-  font-size: 12px;
-  color: #7b808c;
-  margin-bottom: 0;
-  text-align-last: right;
-}
-#testimonial .comment-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 2;
-}
-#testimonial .testimonial-title {
-  padding-right: 16px;
-}
-
-#testimonial .swiper-button-next,
-.swiper-button-prev {
-  width: 28px !important;
-  height: 28px !important;
-  color: #fff !important;
-  background-color: #3f9bee;
-  border-radius: 50px;
-}
-#testimonial .swiper-pagination-bullet-active {
-  background: #3f9bee !important;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 12px !important;
-  font-weight: bold !important;
-}
-#testimonial .swiper-rtl .swiper-button-next {
-  left: 160px !important;
-}
-
-#testimonial .swiper-button-next,
-.swiper-button-prev {
-  top: 63% !important;
-}
-
-#testimonial .swiper-rtl .swiper-button-prev {
-  right: 160px !important;
-}
-
-#testimonial .swiper-slide {
-  height: 300px;
-}
-
-.testimonial-title img {
-  width: 70px;
 }
 
 /*================================ faq ================================*/
@@ -560,4 +481,3 @@ footer .harmonyLogo:hover {
     margin: 0 auto;
   }
 }
-

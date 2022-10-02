@@ -1,4 +1,4 @@
-/*============== mobile abd tablet ==================*/
+/*============== mobile  ==================*/
 @media screen and (max-width: 768px) {
   header.stickyHeader .callToAction {
     font-weight: 700;
@@ -257,5 +257,13 @@
   }
 }
 
+/* tablets and laptop */
 @media screen and (min-width: 768px) and (max-width: 1600px) {
+}
+/* tablets */
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+}
+
+/* Iphone 320 style */
+@media screen and (max-width: 350px) {
 }

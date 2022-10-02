@@ -40,64 +40,16 @@
       </nav>
 
       <!-- motion -->
-      <section id="meeting">
-        <div class="container">
-          <div class="meeting row">
-            <div class="content">
-              <div class="row">
-                <div class="col-md-6 col-sm-12 caption">
-                  <h2 class="section-title">motion</h2>
-                  <p>caption</p>
-                </div>
-                <div class="col-md-6 col-sm-12 videoBox">
-                  <div
-                    class="video-img"
-                    data-bs-toggle="modal"
-                    data-bs-target="#motion"
-                  >
-                    <img
-                      src="assets/images/videoImg.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <!-- Motion Modal -->
-                  <div
-                    class="modal fade motion-modal"
-                    id="motion"
-                    data-bs-backdrop="static"
-                    data-bs-keyboard="false"
-                    tabindex="-1"
-                    aria-labelledby="staticBackdropLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">
-                          <div class="motionVideo">
-                            <video controls>
-                              <source src="./assets/video/" type="video/mp4" />
-                            </video>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="motion_box">
+        <h1 class="title">ویدیو موشن</h1>
+        <div
+          class="video_bg"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          ویدیو
         </div>
-      </section>
-
+      </div>
       <!-- counter -->
       <section id="counter">
         <div class="container text-center">
@@ -193,7 +145,7 @@
           <div class="form-bg form-pd-center">
             <h2 class="section-title">فرم ثبت نام</h2>
             <p>توضیحات فرم ثبت نام</p>
-            <form id="subscriber">
+            <form id="subscribers">
               <div class="form-group position-relative">
                 <i class="far fa-user iconPlaceholder"></i>
                 <input
@@ -268,88 +220,23 @@
         </div>
       </section>
 
-      <!--testimonial-->
-      <section id="testimonial">
-        <div class="container">
-          <div class="swiper mySwiper">
-            <h2 class="section-title">نظرات مشتریان</h2>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="testimonial-slide">
-                  <div class="testimonialHeader d-flex align-items-center">
-                    <div class="slideImg">
-                      <img
-                        src="assets/images/profile.png"
-                        alt=""
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="testimonial-title">
-                      <p class="t-name">نام و نام خانوادگی</p>
-                      <p class="customer">مشتری</p>
-                    </div>
-                  </div>
-                  <div class="comment-text">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                    با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
-                    و مجله در ستون و سطرآنچنان که لازم است وه از طراحان گرافیک
-                    است.
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="testimonial-slide">
-                  <div class="testimonialHeader d-flex align-items-center">
-                    <div class="slideImg">
-                      <img
-                        src="assets/images/profile.png"
-                        alt=""
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="testimonial-title">
-                      <p class="t-name">نام و نام خانوادگی</p>
-                      <p class="customer">مشتری</p>
-                    </div>
-                  </div>
-                  <div class="comment-text">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                    با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
-                    و مجله در ستون و سطرآنچنان که لازم است وه از طراحان گرافیک
-                    است.
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="testimonial-slide">
-                  <div class="testimonialHeader d-flex align-items-center">
-                    <div class="slideImg">
-                      <img
-                        src="assets/images/profile.png"
-                        alt=""
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="testimonial-title">
-                      <p class="t-name">نام و نام خانوادگی</p>
-                      <p class="customer">مشتری</p>
-                    </div>
-                  </div>
-                  <div class="comment-text">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                    با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
-                    و مجله در ستون و سطرآنچنان که لازم است وه از طراحان گرافیک
-                    است.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
         </div>
-      </section>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
 
       <!-- Design by Harmony Agency -->
 
@@ -460,6 +347,11 @@
               ><i class="fab fa-linkedin"></i
             ></a>
           </div>
+          <span class="copyMsg"></span>
+          <i
+            class="fas fa-share-alt clipboard"
+            data-clipboard-target="#copyLink"
+          ></i>
           <div class="copyright">
             <a
               href="https://harmony.agency/?utm_source=designbyharmony&amp;utm_medium=badge&amp;utm_campaign=...-landing"
@@ -489,6 +381,33 @@
           </div>
         </div>
       </footer>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video controls>
+                <source src="assets/videos/E1.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Design by Harmony Agency -->
@@ -496,8 +415,9 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.validate.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
+    <!-- <script src="assets/js/jquery.easing.min.js"></script> -->
     <script src="assets/js/jquery.countup.min.js"></script>
+    <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/waypoint.js"></script>
