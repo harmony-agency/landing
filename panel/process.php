@@ -39,6 +39,7 @@ if(isset($phone))  {
                                 VALUES ('$name', $phone , '$utm_source' ,  '$utm_medium' , '$utm_campaign' , '$utm_term' , '$utm_content', '$referrer')";
                                 // use exec() because no results are returned
                                 $pdo->exec($sql);
+                                $data['success'] = true;
                                 $data['message'] = "<h2 class='success'>درخواست شما با موفقیت ثبت شد</h2>";
                         } 
                  catch(PDOException $e) {

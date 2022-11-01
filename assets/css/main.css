@@ -10,17 +10,29 @@ body {
 .btn:focus {
   box-shadow: none;
 }
-input:-internal-autofill-selected {
-  background-image: none !important;
-  background-color: #f1f1f1 !important;
-  color: none !important;
-}
 input:-webkit-autofill,
-input:-webkit-autofill:focus {
-  background-image: none !important;
-  background-color: #f1f1f1 !important;
-  color: none !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 9999s ease-in-out 0s;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.result {
+  text-align: center;
+  text-align-last: center;
+  color: green;
+}
+
 /*============== callToAction and it's hover ==================*/
 
 .callToAction {
@@ -450,6 +462,22 @@ footer .harmonyLogo {
   opacity: 0.6;
 }
 footer .harmonyLogo:hover {
+  opacity: 1;
+}
+/*================================ copyright ================================*/
+.copyright {
+  background: #1c1c79;
+  padding: 11px;
+  text-align: center;
+}
+.copyright img {
+  opacity: 0.7;
+}
+.copyright .harmonyLogo {
+  max-width: 70%;
+  opacity: 0.6;
+}
+.copyright .harmonyLogo:hover {
   opacity: 1;
 }
 .copyright .hover-company {
