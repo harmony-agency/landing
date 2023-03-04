@@ -1,0 +1,287 @@
+@font-face {
+    font-family: IRANSansX;
+    src: url(./fonts/IRANSansX/IRANSansX-Light.woff);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/* nav */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+
+}
+
+.nav__logo {
+    /* logo-fa 1 */
+    width: 114px;
+    height: 45px;
+    margin-right: 15vw;
+    top: 18px;
+
+}
+
+.nav__call {
+    margin-left: 15vw;
+    border-radius: 110px;
+}
+
+
+.nav__item>img {
+    padding: 1rem;
+}
+
+
+.nav__item {
+    margin-right: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 165.3%;
+    /* or 23px */
+    color: #727272;
+    display: flex;
+    align-items: center;
+    font-family: IRANSansX
+}
+
+.nav__list {
+    display: flex;
+}
+
+
+/* header */
+
+
+.header {
+    width: 100vw;
+    height: fit-content;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.header__img {
+    width: 100vw;
+    height: auto;
+}
+
+.header__content {
+
+    margin-left: 20vw;
+    margin-right: 20vw;
+
+    position: absolute;
+    z-index: 5;
+    justify-self: center;
+    text-align: center;
+}
+
+.header__content>h1 {
+    font-size: 5rem;
+    color: #FFFF;
+    font-weight: 1200;
+    margin-bottom: 0;
+}
+
+.header__content>h2 {
+    font-size: 4rem;
+    color: #FFFF;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.header__but {
+    border-radius: 100px;
+
+    background-color: transparent;
+    color: #FFFF;
+    border: 3px solid #FFFF;
+    font-size: 2rem;
+    padding: 1.2rem 2.5rem;
+    margin-top: 1.5rem;
+
+}
+
+.header__but>img {
+    padding-right: 2rem;
+}
+
+
+/*contact */
+
+.contact {
+    width: 100vw;
+    height: fit-content;
+    position: relative;
+    padding: 0;
+    align-items: center;
+
+    display: flex;
+}
+
+.contact__filter {
+
+    position: absolute;
+    right: 0px;
+    z-index: 3;
+    width: 100vw;
+    height: 100%;
+    background-color: #082E5F;
+    opacity: 0.8;
+
+
+}
+
+.contact__img {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    height: 100%;
+    width: auto;
+}
+
+.contact__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    column-gap: 12rem;
+    position: absolute;
+    z-index: 5;
+    align-items: center;
+
+
+}
+
+.contact__form {
+
+    box-sizing: border-box;
+    border: 2px solid #24CB5D;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 7rem;
+
+
+}
+
+.contact__input {
+    text-align: center;
+    border: 0;
+    border-radius: 10px;
+    width: 30rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.contact__form>p {
+    color: #FFFF;
+    margin-top: 6rem;
+    margin-bottom: 3.5rem;
+}
+
+.contact__item {
+    display: block;
+}
+
+.contact__but {
+    background-color: #24CB5D;
+    border: 0;
+    border-radius: 0 20px 0 9px;
+    color: #FFFF;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+}
+
+.contact__but>img {
+    width: 1.5rem;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.contact__text>p {
+    color: #FFFF;
+    text-align: right;
+}
+
+.contact__text>h3 {
+    color: #FFFF;
+}
+
+
+/* info */
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #082E5F;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.info__call {
+    display: flex;
+    color: #FFFF;
+    margin-top: 0.5rem;
+    font-family: IRANSansX;
+}
+
+.info__phoneCall {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+}
+
+.info__call>img {
+    width: 1.5rem;
+    height: 2rem;
+    margin-left: 2rem;
+}
+
+.info__add {
+    margin-bottom: 0;
+}
+
+.info__logo {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info__social>img {
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+}
+
+.info__map {
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+/* footer */
+.footer {
+    background: #24CB5D;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.footer>img {
+    height: 2rem;
+    width: auto;
+}
