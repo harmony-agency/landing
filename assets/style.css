@@ -540,7 +540,32 @@ html {
         margin-right: 1rem;
     }
 
+}
 
+.ad {
+    position: fixed;
+    padding: 1rem;
+    top: 30rem;
+    color: #FFFFFF;
+    z-index: 7;
+    left: 0;
+    text-align: center;
+    width: 17rem;
+    border-radius: 0 10px 10px 0px;
+    background: linear-gradient(180deg, #3DA62C 0%, #15665C 100%);
+}
 
+.ad>img {
+    margin-bottom: 1rem;
+}
 
+.ad__close {
+    font-size: 45px;
+    font-weight: 600;
+    display: inline-block;
+
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    right: 10px;
 }
