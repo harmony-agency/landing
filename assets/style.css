@@ -569,3 +569,8 @@ html {
     top: 0;
     right: 10px;
 }
+
+.swiper {
+    width: 100vw;
+    height: auto;
+}

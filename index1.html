@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0"
     />
-    <title>عنوان</title>
+    <title>نیکاگشت</title>
     <link rel="icon" type="icon" href="assets/images/logo-fa.png" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/harmony.css" />
@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="assets/css/swiper.min.css" />
     <link rel="stylesheet" href="assets/css/aos.css" />
     <link rel="stylesheet" href="assets/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+
   </head>
   <body>
     <div class="ad">
@@ -47,9 +53,26 @@
           <img src="./assets/images/Vector 1.png" alt="">
         </button>
         </article>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            <div class="swiper-slide"> <img src="./assets/images/paris.png" class="header__img" alt="paris"></div>
+            <div class="swiper-slide">slide 1</div>
+            <div class="swiper-slide">slide 2</div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
         
-        
-          <img src="./assets/images/paris.png" class="header__img">
+         
         
         
       </header>
@@ -69,6 +92,7 @@
 
         <div class="tour">
           <button class="tour__sale">٪ تخفیف ویژه</button>
+          
           <img class="tour__img" src="./assets/images/skylon-tower-500x322 1.png" alt="tower">
           <h4>تور فرانسه هلند بهار 1402</h4>
           <div class="tour__content"><div class="tour__duration">7 روز</div><p class="tour__text">3 شب پاریس + 4 شب آمستردام</p></div>
@@ -227,5 +251,29 @@
       <footer class="footer">
         <img src="./assets/images/Group 9517.png" alt="">
       </footer>
-    
+      
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
   </body>
