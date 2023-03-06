@@ -61,8 +61,13 @@
             <!-- Slides -->
 
             <div class="swiper-slide"> <img src="./assets/images/paris.png" class="header__img" alt="paris"></div>
-            <div class="swiper-slide">slide 1</div>
-            <div class="swiper-slide">slide 2</div>
+            <div class="swiper-slide"><img src="./assets/images/poland.png" class="header__img" alt="poland"></div>
+            <div class="swiper-slide"><img src="./assets/images/spain1.png" class="header__img" alt="spain"></div>
+            <div class="swiper-slide"><img src="./assets/images/spain2.png" class="header__img" alt="spain"></div>
+            <div class="swiper-slide"><img src="./assets/images/japan1.png" class="header__img" alt="japan"></div>
+            <div class="swiper-slide"><img src="./assets/images/japan2.png" class="header__img" alt="japan"></div>
+            <div class="swiper-slide"><img src="./assets/images/ship.png" class="header__img" alt="ship"></div>
+
           </div>
           <!-- If we need pagination -->
           <div class="swiper-pagination"></div>
@@ -256,12 +261,17 @@
       
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script>const swiper = new Swiper('.swiper', {
+<script>
+
+
+const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
   
-
+  autoplay: {
+   delay: 5000,
+ },
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
