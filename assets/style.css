@@ -214,6 +214,7 @@ html {
 .contact__input {
     text-align: center;
     border: 0;
+    font-size: larger;
     border-radius: 10px;
     width: 30rem;
     height: 5rem;
@@ -242,12 +243,13 @@ html {
     position: fixed;
     padding: 1rem 2rem;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .contact__but>img {
     width: 1.5rem;
     height: auto;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 .contact__text>p {
@@ -291,6 +293,22 @@ html {
     }
 }
 
+@media screen and (max-width:800px) {
+    .contact__content {
+        display: block;
+        align-self: center;
+        position: relative;
+        padding: 2rem;
+        background-image: url(./images/header-bpo-contact-center\ 1\(1\).png);
+        text-align: center;
+
+    }
+
+    .contact__img {
+        display: none;
+    }
+}
+
 
 /* info */
 
@@ -298,8 +316,8 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: #082E5F;
-    padding-left: 15vw;
-    padding-right: 15vw;
+    padding-left: 18vw;
+    padding-right: 18vw;
     padding-top: 3rem;
     padding-bottom: 3rem;
     width: 100vw;
@@ -341,13 +359,21 @@ html {
     padding-top: 1.5rem;
 }
 
-.info__map {
+.info__map_container {
     margin-top: 0.7rem;
     margin-bottom: 0.7rem;
-
-    align-self: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.info__map {
+
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
 
 @media screen and (max-width:700px) {
     .info {
@@ -542,6 +568,7 @@ html {
 
 }
 
+/* advertisement sticky */
 .ad {
     position: fixed;
     padding: 1rem;
@@ -568,6 +595,12 @@ html {
     position: absolute;
     top: 0;
     right: 10px;
+}
+
+@media screen and (max-width:750px) {
+    .ad {
+        display: none;
+    }
 }
 
 .swiper {
