@@ -72,6 +72,10 @@ html {
 
     }
 
+    .nav {
+        margin-bottom: 2.5rem;
+    }
+
 }
 
 
@@ -140,7 +144,8 @@ html {
     }
 
     .header__img {
-        display: block;
+        object-fit: cover;
+        height: 400px;
 
     }
 
@@ -150,6 +155,7 @@ html {
         font-size: 1.5rem;
         padding: 1rem 2rem;
         margin-top: 1rem;
+        margin-bottom: 2.5rem;
     }
 
     .header__but>img {
