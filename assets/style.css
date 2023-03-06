@@ -410,6 +410,8 @@ html {
 
 .tour__package {
     margin-bottom: 10rem;
+    width: 100%;
+
 }
 
 .tour__list {
@@ -420,7 +422,10 @@ html {
     grid-template-rows: auto;
     column-gap: 4rem;
     row-gap: 4rem;
+
+
 }
+
 
 .tour__title {
     display: flex;
@@ -563,6 +568,14 @@ html {
 @media screen and (max-width:500px) {
     .tour__content {
 
+        margin-right: 1rem;
+    }
+
+    .tour__list {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 1rem;
         margin-right: 1rem;
     }
 
