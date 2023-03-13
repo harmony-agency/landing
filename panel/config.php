@@ -4,8 +4,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname="";
-$LandingName="";
+$dbname="wetalk";
+$LandingName="wetalk";
 
 try {
 

@@ -100,46 +100,43 @@
     margin: 0 auto;
   }
 
-  /*================================ remember ================================*/
-  #remember .section_title {
+  /*================================ carts ================================*/
+  #carts .section_title {
     margin: 0 auto 40px;
   }
-  #remember .content_box {
+  #carts .content_box {
     padding: 21px 0px 37px;
     margin: 0 auto 75px;
     min-height: 327px;
   }
-  #remember .content_box .img_box {
+  #carts .content_box .img_box {
     min-height: auto;
     margin: 0 auto 13px;
     align-items: flex-start;
   }
-  .img_box img {
-    max-width: 55%;
-  }
-  #remember .content_box .title {
+  #carts .content_box .title {
     margin: 0 auto 18px;
     max-width: 70%;
   }
-
-  #remember .content_box.active .img_box {
+  #carts .content_box.active .img_box {
     margin-top: -50px;
   }
-  #remember .content_box.active {
+  #carts .content_box.active {
     min-height: 327px;
   }
-  #remember .content_box.active .title {
+  #carts .content_box.active .title {
     color: #ffffff;
     font-weight: 300;
     font-size: 14px;
     line-height: 27px;
     max-width: 80%;
   }
-  /*================================ childhood ================================*/
-  #childhood {
+
+  /*================================ more_info ================================*/
+  #more_info {
     padding: 25px 0 57px;
   }
-  #childhood .caption {
+  #more_info .caption {
     font-size: 16px;
     max-width: 90%;
   }

@@ -27,12 +27,17 @@ if (location.search != "") {
 }
 
 /*===================================== stickyHeader =====================================*/
-$(window).on("scroll", function () {
-  if ($(this).scrollTop() > 500 && $(this).scrollTop() < 6000) {
-    $("header").addClass("stickyHeader");
-  } else {
-    $("header").removeClass("stickyHeader");
-  }
+jQuery(function ($) {
+  $(window).on("scroll", function () {
+    if (
+      $(this).scrollTop() > $("#call_center").position().top &&
+      $(this).scrollTop() < 5000
+    ) {
+      $("header").addClass("stickyHeader");
+    } else {
+      $("header").removeClass("stickyHeader");
+    }
+  });
 });
 
 /*===================================== Aos animation =====================================*/
@@ -95,6 +100,7 @@ $(".copy_code_btn").click(function (event) {
 $("#starter_video").click(function () {
   $(".play").fadeOut();
 });
+
 $(".play").click(function () {
   $(this).fadeOut();
   $(this).siblings("#starter_video").trigger("play");
@@ -106,50 +112,8 @@ $(".counter").counterUp({
   time: 1000,
 });
 
-// /*===================================== timer =====================================*/
-// var timeInSecs;
-// var ticker;
-
-// function startTimer(secs) {
-//   timeInSecs = parseInt(secs);
-//   ticker = setInterval("tick()", 1000);
-// }
-
-// function tick() {
-//   var secs = timeInSecs;
-//   if (secs > 0) {
-//     timeInSecs--;
-//   } else {
-//     clearInterval(ticker);
-//     startTimer(48 * 60 * 60); // 4 minutes in seconds
-//   }
-
-//   // var days = Math.floor(secs / 86400);
-//   // secs %= 86400;
-//   var hours = Math.floor(secs / 3600);
-//   secs %= 3600;
-//   var mins = Math.floor(secs / 60);
-//   secs %= 60;
-//   var pretty =
-//     // (days < 10 ? "0" : "") +
-//     // days +
-//     // ":" +
-//     (hours < 10 ? "0" : "") +
-//     hours +
-//     ":" +
-//     (mins < 10 ? "0" : "") +
-//     mins +
-//     ":" +
-//     (secs < 10 ? "0" : "") +
-//     secs;
-
-//   document.getElementById("countdown").innerHTML = pretty;
-// }
-
-// startTimer(48 * 60 * 60);
-
 // The data/time we want to countdown to
-var countDownDate = new Date("March 15, 2023 00:00:00").getTime();
+var countDownDate = new Date("Oct 15, 2023 00:00:00").getTime();
 
 // Run myfunc every second
 var myfunc = setInterval(function () {
@@ -157,13 +121,13 @@ var myfunc = setInterval(function () {
   var timeleft = countDownDate - now;
 
   // Calculating the days, hours, minutes and seconds left
-  // var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
   var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
   // Result is output to the specific element
-  // document.getElementById("days").innerHTML = days;
+  document.getElementById("days").innerHTML = days;
   document.getElementById("hours").innerHTML = hours;
   document.getElementById("mins").innerHTML = minutes;
   document.getElementById("secs").innerHTML = seconds;
@@ -171,13 +135,13 @@ var myfunc = setInterval(function () {
   // Display the message when countdown is over
   if (timeleft < 0) {
     clearInterval(myfunc);
-    // document.getElementById("days").innerHTML = "";
+    document.getElementById("days").innerHTML = "";
     document.getElementById("hours").innerHTML = "";
     document.getElementById("mins").innerHTML = "";
     document.getElementById("secs").innerHTML = "";
-    // document.getElementById("end").innerHTML = "Ų²Ł…Ų§Ł† ŲØŁ‡ Ų§ŲŖŁ…Ų§Ł… Ų±Ų³ŪŲÆŁ‡!";
   }
 }, 1000);
+
 /*===================================== swiper =====================================*/
 var testimonial_Swiper = new Swiper(".testimonial_Swiper", {
   slidesPerView: 3,
@@ -210,370 +174,22 @@ var testimonial_Swiper = new Swiper(".testimonial_Swiper", {
   },
 });
 
-/*===================================== testimonial audios =====================================*/
-
-$(document).ready(function () {
-  var audio1 = "./assets/sounds/audio1.wav";
-  var audio2 = "./assets/sounds/audio2.wav";
-  var audio3 = "./assets/sounds/audio3.wav";
-  var audio4 = "./assets/sounds/audio4.wav";
-  var audio5 = "./assets/sounds/audio5.wav";
-  var wavesurferaudio1 = WaveSurfer.create({
-    container: "#waveform1",
-    waveColor: "#B9B9B9",
-    progressColor: "#364FC7",
-    xhr: {
-      cache: "default",
-      mode: "cors",
-      method: "GET",
-      credentials: "include",
-      headers: [
-        { key: "cache-control", value: "no-cache" },
-        { key: "pragma", value: "no-cache" },
-      ],
-    },
-  });
-  var wavesurferaudio2 = WaveSurfer.create({
-    container: "#waveform2",
-    waveColor: "#B9B9B9",
-    progressColor: "#364FC7",
-    xhr: {
-      cache: "default",
-      mode: "cors",
-      method: "GET",
-      credentials: "include",
-      headers: [
-        { key: "cache-control", value: "no-cache" },
-        { key: "pragma", value: "no-cache" },
-      ],
-    },
-  });
-  var wavesurferaudio3 = WaveSurfer.create({
-    container: "#waveform3",
-    waveColor: "#B9B9B9",
-    progressColor: "#364FC7",
-    xhr: {
-      cache: "default",
-      mode: "cors",
-      method: "GET",
-      credentials: "include",
-      headers: [
-        { key: "cache-control", value: "no-cache" },
-        { key: "pragma", value: "no-cache" },
-      ],
-    },
-  });
-  var wavesurferaudio4 = WaveSurfer.create({
-    container: "#waveform4",
-    waveColor: "#B9B9B9",
-    progressColor: "#364FC7",
-    xhr: {
-      cache: "default",
-      mode: "cors",
-      method: "GET",
-      credentials: "include",
-      headers: [
-        { key: "cache-control", value: "no-cache" },
-        { key: "pragma", value: "no-cache" },
-      ],
-    },
-  });
-  var wavesurferaudio5 = WaveSurfer.create({
-    container: "#waveform5",
-    waveColor: "#B9B9B9",
-    progressColor: "#364FC7",
-    xhr: {
-      cache: "default",
-      mode: "cors",
-      method: "GET",
-      credentials: "include",
-      headers: [
-        { key: "cache-control", value: "no-cache" },
-        { key: "pragma", value: "no-cache" },
-      ],
-    },
-  });
-  wavesurferaudio1.load(audio1);
-  wavesurferaudio2.load(audio2);
-  wavesurferaudio3.load(audio3);
-  wavesurferaudio4.load(audio4);
-  wavesurferaudio5.load(audio5);
-
-  $(".btn_player1").on("click", function () {
-    if (wavesurferaudio1.isPlaying()) {
-      $(".pause_icon1").hide();
-      $(".play_icon1").show();
-      wavesurferaudio1.pause();
-      wavesurferaudio2.pause();
-      wavesurferaudio3.pause();
-      wavesurferaudio4.pause();
-      wavesurferaudio5.pause();
-    } else {
-      if (wavesurferaudio2.isPlaying()) {
-        wavesurferaudio2.pause();
-        $(".play_icon2").show();
-        $(".pause_icon2").hide();
-      }
-      if (wavesurferaudio3.isPlaying()) {
-        wavesurferaudio3.pause();
-        $(".play_icon3").show();
-        $(".pause_icon3").hide();
-      }
-      if (wavesurferaudio4.isPlaying()) {
-        wavesurferaudio4.pause();
-        $(".play_icon4").show();
-        $(".pause_icon4").hide();
-      }
-      if (wavesurferaudio5.isPlaying()) {
-        wavesurferaudio5.pause();
-        $(".play_icon5").show();
-        $(".pause_icon5").hide();
-      }
-      wavesurferaudio1.play();
-      $(".play_icon1").hide();
-      $(".pause_icon1").show();
-    }
-  });
-
-  $(".btn_player2").on("click", function () {
-    if (wavesurferaudio2.isPlaying()) {
-      $(".pause_icon2").hide();
-      $(".play_icon2").show();
-      wavesurferaudio1.pause();
-      wavesurferaudio2.pause();
-      wavesurferaudio3.pause();
-      wavesurferaudio4.pause();
-      wavesurferaudio5.pause();
-    } else {
-      if (wavesurferaudio1.isPlaying()) {
-        wavesurferaudio1.pause();
-        $(".play_icon1").show();
-        $(".pause_icon1").hide();
-      }
-      if (wavesurferaudio3.isPlaying()) {
-        wavesurferaudio3.pause();
-        $(".play_icon3").show();
-        $(".pause_icon3").hide();
-      }
-      if (wavesurferaudio4.isPlaying()) {
-        wavesurferaudio4.pause();
-        $(".play_icon4").show();
-        $(".pause_icon4").hide();
-      }
-      if (wavesurferaudio5.isPlaying()) {
-        wavesurferaudio5.pause();
-        $(".play_icon5").show();
-        $(".pause_icon5").hide();
-      }
-      wavesurferaudio2.play();
-      $(".play_icon2").hide();
-      $(".pause_icon2").show();
-    }
-  });
-
-  $(".btn_player3").on("click", function () {
-    if (wavesurferaudio3.isPlaying()) {
-      $(".pause_icon3").hide();
-      $(".play_icon3").show();
-      wavesurferaudio1.pause();
-      wavesurferaudio2.pause();
-      wavesurferaudio3.pause();
-      wavesurferaudio4.pause();
-      wavesurferaudio5.pause();
-    } else {
-      if (wavesurferaudio1.isPlaying()) {
-        wavesurferaudio1.pause();
-        $(".play_icon1").show();
-        $(".pause_icon1").hide();
-      }
-      if (wavesurferaudio2.isPlaying()) {
-        wavesurferaudio2.pause();
-        $(".play_icon2").show();
-        $(".pause_icon2").hide();
-      }
-      if (wavesurferaudio4.isPlaying()) {
-        wavesurferaudio4.pause();
-        $(".play_icon4").show();
-        $(".pause_icon4").hide();
-      }
-      if (wavesurferaudio5.isPlaying()) {
-        wavesurferaudio5.pause();
-        $(".play_icon5").show();
-        $(".pause_icon5").hide();
-      }
-      wavesurferaudio3.play();
-      $(".play_icon3").hide();
-      $(".pause_icon3").show();
-    }
-  });
-
-  $(".btn_player4").on("click", function () {
-    if (wavesurferaudio4.isPlaying()) {
-      $(".pause_icon4").hide();
-      $(".play_icon4").show();
-      wavesurferaudio1.pause();
-      wavesurferaudio2.pause();
-      wavesurferaudio3.pause();
-      wavesurferaudio4.pause();
-      wavesurferaudio5.pause();
-    } else {
-      if (wavesurferaudio1.isPlaying()) {
-        wavesurferaudio1.pause();
-        $(".play_icon1").show();
-        $(".pause_icon1").hide();
-      }
-      if (wavesurferaudio2.isPlaying()) {
-        wavesurferaudio2.pause();
-        $(".play_icon2").show();
-        $(".pause_icon2").hide();
-      }
-      if (wavesurferaudio3.isPlaying()) {
-        wavesurferaudio3.pause();
-        $(".play_icon3").show();
-        $(".pause_icon3").hide();
-      }
-      if (wavesurferaudio5.isPlaying()) {
-        wavesurferaudio5.pause();
-        $(".play_icon5").show();
-        $(".pause_icon5").hide();
-      }
-      wavesurferaudio4.play();
-      $(".play_icon4").hide();
-      $(".pause_icon4").show();
-    }
-  });
-
-  $(".btn_player5").on("click", function () {
-    if (wavesurferaudio5.isPlaying()) {
-      $(".pause_icon5").hide();
-      $(".play_icon5").show();
-      wavesurferaudio1.pause();
-      wavesurferaudio2.pause();
-      wavesurferaudio3.pause();
-      wavesurferaudio4.pause();
-      wavesurferaudio5.pause();
-    } else {
-      if (wavesurferaudio1.isPlaying()) {
-        wavesurferaudio1.pause();
-        $(".play_icon1").show();
-        $(".pause_icon1").hide();
-      }
-      if (wavesurferaudio2.isPlaying()) {
-        wavesurferaudio2.pause();
-        $(".play_icon2").show();
-        $(".pause_icon2").hide();
-      }
-      if (wavesurferaudio3.isPlaying()) {
-        wavesurferaudio3.pause();
-        $(".play_icon3").show();
-        $(".pause_icon3").hide();
-      }
-      if (wavesurferaudio4.isPlaying()) {
-        wavesurferaudio4.pause();
-        $(".play_icon4").show();
-        $(".pause_icon4").hide();
-      }
-      wavesurferaudio5.play();
-      $(".play_icon5").hide();
-      $(".pause_icon5").show();
-    }
-  });
+/*===================================== click function =====================================*/
+$(".callToAction").click(function () {
+  console.log("click");
 });
 
-/*===================================== hover boxes =====================================*/
-$("#remember .content_box").hover(
+/*===================================== hover function =====================================*/
+$(".callToAction").hover(
   function () {
-    $(this).addClass("active");
+    console.log("hover");
   },
   function () {
-    $(this).removeClass("active");
-  }
-);
-$("#remember .content_box.1").hover(
-  function () {
-    $(this)
-      .find(".title")
-      .text(
-        "چون همه چیزهایی که یاد می‌گیرن رو در مکالمه استفاده می‌کنن, لغات و گرامر ملکه ذهن بچه‌ها می‌شه و هیچوقت اون رو فراموش نمی‌کنن."
-      );
-  },
-  function () {
-    $(this)
-      .find(".title")
-      .text("انگلیسی برامون خیلی فرار بود و لغات و گرامر یادمون نمی‌موند.");
-  }
-);
-$("#remember .content_box.2").hover(
-  function () {
-    $(this)
-      .find(".title")
-      .text(
-        "حتی از همون جلسه اول , فرزندتون می‌تونه جملات دلخواه خودش رو بسازه و اینطوری اعتماد به نفسش در یادگیری زبان انگلیسی هم بالا می‌ره."
-      );
-  },
-  function () {
-    $(this)
-      .find(".title")
-      .text(
-        "حرف زدن به زبان انگلیسی حتی بعد از کلی کلاس و تمرین هم، واسمون آرزو بود."
-      );
-  }
-);
-$("#remember .content_box.3").hover(
-  function () {
-    $(this)
-      .find(".title")
-      .text(
-        "دیگه از اون روخونی‌های حوصله سربر خبری نیست و به جاش بچه‌ها ویدئو‌های اختصاصی و جذاب ویتاک رو تماشا می‌کنن."
-      );
-  },
-  function () {
-    $(this)
-      .find(".title")
-      .text("سر کلاس، بیشتر کارمون روخونی کتاب‌های بی‌فایده و خسته‌کننده بود");
-  }
-);
-$("#remember .content_box.4").hover(
-  function () {
-    $(this)
-      .find(".title")
-      .text(
-        "با آموزش‌های کاربردی‌ای که توی ویتاک می‌بینن، دیگه کتاب زبان مدرسه برای دلبندانتون خیلی پیش پا افتاده و ساده می‌شه."
-      );
-  },
-  function () {
-    $(this)
-      .find(".title")
-      .text("گرفتن یک نمره خوب از درس زبان انگلیسی توی مدرسه خیلی سخت بود");
+    console.log("not hover");
   }
 );
 
-/*===================================== more info =====================================*/
-$(".boxes").click(function () {
-  $(".boxes").removeClass("active");
-  $(".circle").removeClass("active");
-  $(".img_steps").removeClass("active");
-  $(this).addClass("active");
-  var data_step = $(this).data("step");
-  var current_num1 = document.querySelector(
-    "[data-number='" + data_step + "']"
-  );
-  var current_img1 = document.querySelector("[data-img='" + data_step + "']");
-  $(current_num1).addClass("active");
-  $(current_img1).addClass("active");
-});
-
-$(".circle").click(function () {
-  $(".circle").removeClass("active");
-  $(".boxes").removeClass("active");
-  $(".img_steps").removeClass("active");
-  $(this).addClass("active");
-
-  var data_number = $(this).data("number");
-  var current_step = document.querySelector(
-    "[data-step='" + data_number + "']"
-  );
-  var current_img = document.querySelector("[data-img='" + data_number + "']");
-  $(current_step).addClass("active");
-  $(current_img).addClass("active");
-});
+/*===================================== scripts for mobile =====================================*/
+if (window.matchMedia("(max-width: 768px)").matches) {
+  console.log("mobile scripts");
+}

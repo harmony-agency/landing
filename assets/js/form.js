@@ -180,7 +180,7 @@ $("#editMobile").click(function () {
   $(".form.step1").fadeIn();
 });
 
-// ============ timer function ============
+// ============ otp timer function ============
 var interval;
 function myCountDown() {
   clearInterval(interval);

@@ -36,7 +36,7 @@ include "jdf.php";
 <?php 
 if(isset($_POST['excel_output']))
 {
-    if(isset($_POST['pass']) && md5($_POST['pass'])== "..."){
+    if(isset($_POST['pass']) && $_POST['pass'] == "harmony@wetalk"){
        $res_list = [];
        $sql_order="SELECT * FROM subscribers ORDER BY date DESC";
        print_r($sql_order);
@@ -45,8 +45,8 @@ if(isset($_POST['excel_output']))
 
           foreach($res->fetchAll() as $row){
              $res_list[] = [
-                'name' => $row['name'],
-                'phone' => $row['phone'],
+                'fullName' => $row['fullName'],
+                'phoneNumber' => $row['phoneNumber'],
                 'utm_source' =>  $row['utm_source'],
                 'utm_medium' =>  $row['utm_medium'],
                 'utm_term' =>  $row['utm_term'],
@@ -86,7 +86,7 @@ function xlsx_export( $res_data )
                     ->setLastModifiedBy("file excel landing $LandingName")
                     ->setTitle("'گزارش خروجی اکسل لندینگ $LandingName'")
                     ->setSubject("گزارش لندینگ $LandingName")
-                    ->setDescription("این یک گزارش کامل از امرون می باشد")
+                    ->setDescription("این یک گزارش کامل از نواتل می باشد")
                     ->setKeywords("$LandingName");
 
       // Add some data
@@ -96,6 +96,9 @@ function xlsx_export( $res_data )
       $objSpreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(20);
       $objSpreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(20);
       $objSpreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(20);
+      $objSpreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(20);
+      $objSpreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(20);
+      $objSpreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(20);
       $objSpreadsheet->setActiveSheetIndex(0)
                      ->setCellValue('A1', 'نام')
                      ->setCellValue('B1', 'شماره تماس')
@@ -111,8 +114,8 @@ function xlsx_export( $res_data )
       foreach($res_data as $res_data_item)
       {
          $objSpreadsheet->setActiveSheetIndex(0)
-                         ->setCellValue('A'.$row, $res_data_item['name'])
-                         ->setCellValue('B'.$row, $res_data_item['phone'])
+                         ->setCellValue('A'.$row, $res_data_item['fullName'])
+                         ->setCellValue('B'.$row, $res_data_item['phoneNumber'])
                          ->setCellValue('C'.$row, $res_data_item['utm_source'])
                          ->setCellValue('D'.$row, $res_data_item['utm_medium'])
                          ->setCellValue('E'.$row, $res_data_item['utm_campaign'])

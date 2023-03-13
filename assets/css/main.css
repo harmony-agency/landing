@@ -1,13 +1,10 @@
 @import url(../fonts/dana/dana.css);
-@import url(../fonts/pelak/pelak.css);
 /*================================ general ================================*/
 *,
 html {
   scroll-behavior: smooth !important;
 }
 body {
-  background-image: url(../images/body_bg.svg);
-  background-repeat: no-repeat;
   overflow-x: hidden;
   font-family: "dana";
 }
@@ -132,7 +129,6 @@ section,
   width: 100%;
   z-index: 1000;
 }
-
 header {
   background: #fff;
   box-shadow: inset 67.3333px -67.3333px 67.3333px rgba(194, 194, 194, 0.1),
@@ -226,7 +222,6 @@ header.stickyHeader {
   border: 3px solid #fff;
   position: relative;
 }
-
 #intro .content .right {
   padding: 100px 100px 100px 28px;
   text-align: right;
@@ -273,14 +268,14 @@ header.stickyHeader {
   text-align-last: right;
 }
 
-/*================================ remember ================================*/
-#remember .content .first {
+/*================================ carts ================================*/
+#carts .content .first {
   padding-right: 0;
 }
-#remember .content .last {
+#carts .content .last {
   padding-left: 0;
 }
-#remember .content_box {
+#carts .content_box {
   background: rgba(255, 255, 255, 0.32);
   backdrop-filter: blur(30px);
   border-radius: 24px;
@@ -289,7 +284,7 @@ header.stickyHeader {
   border: 3px solid #fff;
   transition: 0.3s;
 }
-#remember .content_box .img_box {
+#carts .content_box .img_box {
   min-height: 154px;
   margin: 0 auto 23px;
   text-align: center;
@@ -297,7 +292,7 @@ header.stickyHeader {
   align-items: flex-end;
   justify-content: center;
 }
-#remember .content_box .title {
+#carts .content_box .title {
   color: #505050;
   font-weight: 500;
   font-size: 14px;
@@ -306,19 +301,19 @@ header.stickyHeader {
   text-align-last: center;
   margin: 0 auto 33px;
 }
-#remember .content_box .but {
+#carts .content_box .but {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#remember .content_box .but span {
+#carts .content_box .but span {
   color: #8c9ade;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.9;
   margin: 0 0 0 2px;
 }
-#remember .content_box .property_box {
+#carts .content_box .property_box {
   width: 43px;
   position: absolute;
   left: 0;
@@ -326,7 +321,7 @@ header.stickyHeader {
   margin: 0 auto;
   bottom: -50px;
 }
-#remember .content_box .property_box .arrow {
+#carts .content_box .property_box .arrow {
   position: absolute;
   top: 20px;
   left: 0;
@@ -336,163 +331,26 @@ header.stickyHeader {
   transform: rotate(180deg);
 }
 /* hover */
-#remember .content_box.active {
+#carts .content_box.active {
   background: #687ad4;
   border: none;
   min-height: 374px;
 }
-#remember .content_box.active .img_box {
+#carts .content_box.active .img_box {
   margin-top: -80px;
 }
-#remember .content_box.active .title {
+#carts .content_box.active .title {
   color: #ffffff;
   font-weight: 300;
   font-size: 16px;
   line-height: 27px;
   max-width: 80%;
 }
-#remember .content_box.active .but {
+#carts .content_box.active .but {
   display: none;
 }
-#remember .content_box.active .property_box .arrow {
+#carts .content_box.active .property_box .arrow {
   transform: none;
-}
-/*================================ childhood ================================*/
-#childhood {
-  padding: 148px 0 77px;
-}
-#childhood .section_title {
-  margin: 0 auto 8px;
-}
-#childhood .caption {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 34px;
-  color: #151618;
-  text-align: justify;
-  text-align-last: center;
-  margin: 0 auto;
-  max-width: 70%;
-}
-
-/*================================ more_info ================================*/
-#more_info {
-  background: #ffd372;
-  height: 561px;
-  display: flex;
-  align-items: center;
-}
-#more_info .left {
-  position: relative;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 378px;
-}
-#more_info .right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-#more_info .boxes {
-  min-height: 70px;
-  display: flex;
-  align-items: flex-start;
-  padding-right: 20px;
-  flex-direction: column;
-  justify-content: center;
-}
-#more_info .boxes .title {
-  color: #5e5e5e;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
-  margin: 0;
-  text-align: right;
-  text-align-last: right;
-  cursor: pointer;
-}
-#more_info .boxes .caption {
-  display: none;
-  color: rgba(0, 0, 0, 0.46);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  margin: 0;
-  text-align: justify;
-  text-align-last: right;
-}
-#more_info .boxes.active {
-  border: 2px solid #fff;
-  border-radius: 24px;
-  padding: 18px 20px;
-}
-#more_info .boxes.active .title {
-  color: #364fc7;
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-#more_info .boxes.active .caption {
-  display: block;
-}
-#more_info .left .circle {
-  width: 68px;
-  height: 74px;
-  position: absolute;
-  background-image: url(../images/circle.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 38px;
-  color: #fff;
-  cursor: pointer;
-  opacity: 0.7;
-}
-#more_info .left .circle.active {
-  opacity: 1;
-}
-#more_info .left .circle1 {
-  left: 0;
-  top: 60px;
-  width: 48px;
-  height: 42px;
-  font-size: 22px;
-}
-#more_info .left .circle2 {
-  left: 127px;
-  top: 100px;
-  width: 48px;
-  height: 52px;
-}
-#more_info .left .circle3 {
-  left: 199px;
-  bottom: 43px;
-}
-#more_info .left .circle4 {
-  right: 0;
-  bottom: 94px;
-}
-#more_info .left .circle5 {
-  left: 300px;
-  top: -6px;
-}
-#more_info .left .img_steps {
-  display: none;
-  position: absolute;
-  right: 80px;
-}
-#more_info .left .img_steps.active {
-  display: block;
-}
-/*================================ participant ================================*/
-#participant {
-  padding: 97px 0 117px;
 }
 
 /*================================ counter ================================*/
@@ -526,123 +384,6 @@ header.stickyHeader {
   content: "+ ";
 }
 
-/*================================ discount ================================*/
-#discount .content {
-  background: #364fc7;
-  border-radius: 24px;
-  position: relative;
-  z-index: 1;
-}
-#discount .content .special_discount {
-  width: 200px;
-  position: absolute;
-  left: -15px;
-  top: -14px;
-  z-index: 10;
-  padding: 0;
-}
-#discount .content .right {
-  padding: 40px 106px 40px 0;
-  text-align: right;
-}
-#discount .content .title {
-  color: #ffbf00;
-  font-family: "pelak";
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 32px;
-  text-align: right;
-  text-align-last: right;
-  margin: 0 0 10px;
-}
-#discount .content ul {
-  padding-right: 14px;
-}
-#discount .content ul li {
-  color: #ffffff;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.8;
-  text-align: right;
-  text-align-last: right;
-  margin: 0 0 10px;
-  list-style: disc;
-}
-#discount .content .subtitle {
-  color: rgba(255, 255, 255, 0.62);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.8;
-  text-align: right;
-  text-align-last: right;
-  margin: 0 0 17px;
-}
-#discount .content .callToAction {
-  margin: 0 0 17px;
-}
-#discount .content .timer {
-  color: #ffbf00;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: inset 43.9083px -43.9083px 43.9083px rgb(194 194 194 / 10%),
-    inset -43.9083px 43.9083px 43.9083px rgb(255 255 255 / 10%);
-  backdrop-filter: blur(36.055px);
-  border-radius: 1000px;
-  width: fit-content;
-  padding: 5px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  mix-blend-mode: color-dodge;
-  margin-left: 10px;
-}
-#countdown {
-  margin-left: 10px;
-  min-width: 100px;
-}
-#discount .content .left {
-  position: relative;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#discount .content .left .discount1 {
-  position: absolute;
-  top: -5px;
-  right: 0;
-  animation: myAnim3 6s ease 0s infinite normal forwards;
-}
-#discount .discount_box {
-  position: relative;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: inset 31.6807px -31.6807px 31.6807px rgba(194, 194, 194, 0.1),
-    inset -31.6807px 31.6807px 31.6807px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(56.015px);
-  border-radius: 1000px;
-  padding: 3px 47px;
-  text-align: center;
-}
-#discount .discount_box .original_price {
-  text-decoration: line-through;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 36.1634px;
-  line-height: 55px;
-  margin: 0 auto;
-}
-#discount .discount_box .recent_price {
-  color: #ffbf00;
-  font-weight: 900;
-  font-size: 45.1124px;
-  line-height: 72px;
-  margin: 0 auto;
-}
-#discount .discount_box .discount2 {
-  position: absolute;
-  top: 33px;
-  left: -2px;
-  z-index: 10;
-}
 @keyframes myAnim3 {
   0%,
   100% {
@@ -845,6 +586,7 @@ header.stickyHeader {
   text-align-last: center;
   margin: 0 auto;
 }
+
 /*================================ testimonial ================================*/
 #testimonial {
   padding: 104px 0 97px;
@@ -955,40 +697,6 @@ header.stickyHeader {
 }
 .testimonial_Swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #364fc7;
-}
-/*================================ #difference ================================*/
-#difference .section_title {
-  margin: 0 auto 6px;
-}
-#difference .caption {
-  color: #151618;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 30px;
-  text-align: justify;
-  text-align-last: center;
-  margin: 0 auto 24px;
-  max-width: 60%;
-}
-#difference .video_box {
-  width: 640px;
-  position: relative;
-  margin: 0 auto;
-  text-align: center;
-}
-#difference .video_box video {
-  max-width: 100%;
-  border-radius: 18px;
-}
-#difference .video_box .play {
-  width: 38px;
-  position: absolute;
-  top: 161px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  z-index: 10;
-  cursor: pointer;
 }
 
 /*================================ faq ================================*/
