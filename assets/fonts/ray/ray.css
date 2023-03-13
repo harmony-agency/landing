@@ -1,0 +1,8 @@
+/* font-weight: 300 */
+@font-face {
+  font-family: ray;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../ray/WebFaNum/RayFaNum-Bold.woff") format("woff"),
+    url("../ray/WebFaNum/RayFaNum-Bold.woff2") format("woff2");
+}
