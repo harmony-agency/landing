@@ -25,19 +25,25 @@ $referrer= $_POST['referrer'];
 
 
 if(isset($phoneNumber))  { 
-
-
     try {
-        $sql = "INSERT INTO subscribers (fullName, phoneNumber ,  utm_source ,  utm_medium , utm_campaign , utm_term , utm_content , referrer)
-                  VALUES ('$fullName', '$phoneNumber' , '$utm_source' ,  '$utm_medium' , '$utm_campaign' , '$utm_term' , '$utm_content', '$referrer')";
-                  // use exec() because no results are returned
-                  $pdo->exec($sql);
-                  sendMail($fullName , $phoneNumber);
-                  $data['success'] = true;
-                  $data['message'] = "<h2 class='success'>نظر شما با موفقیت ثبت شد</h2>";
-    } 
+
+        $sql_select = "SELECT code FROM otp WHERE phone = '$phoneNumber'";
+        $verify_code = $pdo->query($sql_select)->fetchColumn();
+        if($verify_code ==  $confirm) {
+            $sql = "INSERT INTO subscribers (fullName, phoneNumber ,  utm_source ,  utm_medium , utm_campaign , utm_term , utm_content , referrer)
+                    VALUES ('$fullName', '$phoneNumber' , '$utm_source' ,  '$utm_medium' , '$utm_campaign' , '$utm_term' , '$utm_content', '$referrer')";
+                    // use exec() because no results are returned
+                    $pdo->exec($sql);
+                    sendMail($fullName , $phoneNumber);
+                    $data['success'] = true;
+                    $data['message'] = "<h2 class='success'>نظر شما با موفقیت ثبت شد</h2>";
+        } else {
+            $data['success'] = false;
+            $data['message'] =  "کد وارد شده صحیح نمی باشد";
+        }
+    }
     catch(PDOException $e) {
-                  $data['message'] =  $sql . "<br>" . $e->getMessage();
+            $data['message'] =  $sql . "<br>" . $e->getMessage();
     }
 
 } 
