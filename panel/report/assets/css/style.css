@@ -23,7 +23,6 @@
         background-color: #74C65A;
         overflow-x: hidden;
         text-align: center;
-        direction: rtl;
         position:relative;
     }
     button:hover,button:focus{

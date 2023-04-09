@@ -1,44 +1,3 @@
-$(document).ready(function () {
-  $("#subscribers").validate({
-    // initialize the plugin
-    rules: {
-      name: {
-        required: true,
-      },
-      phone: {
-        required: true,
-        minlength: 11,
-        maxlength: 11,
-      },
-      organName: {
-        required: true,
-      },
-      position: {
-        required: true,
-      },
-    },
-    messages: {
-      name: {
-        required: "لطفا نام خود را وارد کنید",
-      },
-      phone: {
-        required: "لطفا شماره تماس خود را وارد کنید",
-        minlength: "شماره تماس وارد شده معتبر نیست",
-        maxlength: "شماره تماس وارد شده معتبر نیست",
-      },
-      organName: {
-        required: "لطفا نام سازمان خود را وارد کنید",
-      },
-      position: {
-        required: "لطفا سمت سازمانی خود را وارد کنید",
-      },
-    },
-    submitHandler: function () {
-      form_submit();
-    },
-  });
-});
-
 (function ($) {
   $.QueryString = (function (a) {
     if (a == "") return {};
@@ -67,66 +26,22 @@ if (location.search != "") {
   sessionStorage.setItem("utm_content", utm_content);
 }
 
-function form_submit() {
-  console.log("data");
-  var formDataSubscriber = {
-    name: $("#subscribers #name").val(),
-    phone: persianToEnglish($("#subscribers #phone").val()),
-    email: $("#subscribers #email").val(),
-    utm_source: sessionStorage.getItem("utm_source"),
-    utm_campaign: sessionStorage.getItem("utm_medium"),
-    utm_medium: sessionStorage.getItem("utm_campaign"),
-    utm_term: sessionStorage.getItem("utm_term"),
-    utm_content: sessionStorage.getItem("utm_content"),
-    referrer: document.referrer,
-  };
-  $.ajax({
-    type: "POST",
-    url: "panel/process.php",
-    data: formDataSubscriber,
-    dataType: "json",
-    encode: true,
-  }).done(function (data) {
-    if (data["success"] == true) {
-      // window.dataLayer = window.dataLayer || [];
-      // window.dataLayer.push({
-      //   event: "formSubmission",
-      // });
-      $(".error-submit").hide();
-      $("#subscribers .caption").hide();
-      $("#subscribers").hide();
-      $(".result").html(
-        "اطلاعات شما ثبت شد<br>کارشناسان ما به زودی با شما تماس خواهند گرفت"
-      );
+/*===================================== stickyHeader =====================================*/
+jQuery(function ($) {
+  $(window).on("scroll", function () {
+    if (
+      $(this).scrollTop() > $("#call_center").position().top &&
+      $(this).scrollTop() < 5000
+    ) {
+      $("header").addClass("stickyHeader");
     } else {
-      $(".error-submit").show();
-      $(".error-submit").html(data["message"]);
+      $("header").removeClass("stickyHeader");
     }
   });
-}
+});
 
-/*===================================== persianNumbers =====================================*/
-var persianNumbers = [
-    /۰/g,
-    /۱/g,
-    /۲/g,
-    /۳/g,
-    /۴/g,
-    /۵/g,
-    /۶/g,
-    /۷/g,
-    /۸/g,
-    /۹/g,
-  ],
-  arabicNumbers = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g],
-  persianToEnglish = function (str) {
-    if (typeof str === "string") {
-      for (var i = 0; i < 10; i++) {
-        str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
-      }
-    }
-    return str;
-  };
+/*===================================== Aos animation =====================================*/
+AOS.init();
 
 /*===================================== copy_right =====================================*/
 $(".copyright a").hover(
@@ -140,29 +55,105 @@ $(".copyright a").hover(
   }
 );
 
-/*===================================== stickyHeader =====================================*/
-jQuery(function ($) {
-  $(window).on("scroll", function () {
-    if ($(this).scrollTop() > 100 && $(this).scrollTop() < 3000) {
-      $("header").addClass("stickyHeader");
-    } else {
-      $("header").removeClass("stickyHeader");
-    }
-  });
+/*===================================== a href behavior =====================================*/
+
+$("a").click(function (event) {
+  // The id of the section we want to go to.
+  var id = $(this).attr("href");
+
+  // An offset to push the content down from the top.
+  var offset = 100;
+
+  // Our scroll target : the top position of the
+  // section that has the id referenced by our href.
+  var target = $(id).offset().top - offset;
+
+  // The magic...smooth scrollin' goodness.
+  $("html, body").animate({ scrollTop: target }, 100);
+
+  //prevent the page from jumping down to our section.
+  event.preventDefault();
 });
 
+/*===================================== clipboard =====================================*/
+$(".copy_code_btn").click(function (event) {
+  // Get the text field
+  var copyText = document.getElementById("copy_code");
+
+  // Select the text field
+  copyText.select();
+  //   copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+  $(".alert_copy").fadeIn();
+
+  // Alert the copied text
+  const myTimeout2 = setTimeout(myGreeting2, 2000);
+
+  function myGreeting2() {
+    $(".alert_copy").fadeOut();
+  }
+});
+
+/*===================================== starter_video =====================================*/
+$("#starter_video").click(function () {
+  $(".play").fadeOut();
+});
+
+$(".play").click(function () {
+  $(this).fadeOut();
+  $(this).siblings("#starter_video").trigger("play");
+});
+
+/*===================================== counter =====================================*/
+$(".counter").counterUp({
+  delay: 5,
+  time: 1000,
+});
+
+// The data/time we want to countdown to
+var countDownDate = new Date("Oct 15, 2023 00:00:00").getTime();
+
+// Run myfunc every second
+var myfunc = setInterval(function () {
+  var now = new Date().getTime();
+  var timeleft = countDownDate - now;
+
+  // Calculating the days, hours, minutes and seconds left
+  var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+  // Result is output to the specific element
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("mins").innerHTML = minutes;
+  document.getElementById("secs").innerHTML = seconds;
+
+  // Display the message when countdown is over
+  if (timeleft < 0) {
+    clearInterval(myfunc);
+    document.getElementById("days").innerHTML = "";
+    document.getElementById("hours").innerHTML = "";
+    document.getElementById("mins").innerHTML = "";
+    document.getElementById("secs").innerHTML = "";
+  }
+}, 1000);
+
 /*===================================== swiper =====================================*/
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 10,
+var testimonial_Swiper = new Swiper(".testimonial_Swiper", {
+  slidesPerView: 3,
+  spaceBetween: 50,
   centeredSlides: true,
-  grabCursor: true,
   loop: true,
-  // effect: "fade",
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  speed: 2000,
+  preventClicks: true,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: true,
+  // },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -172,72 +163,33 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    // device's width >= 640
-    640: {
-      slidesPerView: 2,
+    320: {
+      slidesPerView: 1.2,
       spaceBetween: 20,
     },
-    // device's width >= 768
     768: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-    },
-    // device's width >= 1024
-    1024: {
-      slidesPerView: 5,
+      slidesPerView: 3,
       spaceBetween: 50,
     },
   },
 });
-/*===================================== counter =====================================*/
-$(".counter").counterUp({
-  delay: 5,
-  time: 1000,
+
+/*===================================== click function =====================================*/
+$(".callToAction").click(function () {
+  console.log("click");
 });
 
-// Click event for any anchor tag that's href starts with #
-$("a").click(function (event) {
-  // The id of the section we want to go to.
-  var id = $(this).attr("href");
+/*===================================== hover function =====================================*/
+$(".callToAction").hover(
+  function () {
+    console.log("hover");
+  },
+  function () {
+    console.log("not hover");
+  }
+);
 
-  // An offset to push the content down from the top.
-  var offset = 200;
-
-  // Our scroll target : the top position of the
-  // section that has the id referenced by our href.
-  var target = $(id).offset().top - offset;
-
-  // The magic...smooth scrollin' goodness.
-  $("html, body").animate({ scrollTop: target }, 0);
-
-  //prevent the page from jumping down to our section.
-  event.preventDefault();
-});
-
-/*===================================== Aos animation =====================================*/
-AOS.init();
-
-/*===================================== setTimeout =====================================*/
-const showContent = setTimeout(myGreeting, 2000);
-function myGreeting() {
-  console.log("setTimeout");
-}
-/*===================================== clipboard =====================================*/
-var clipboard = new ClipboardJS(".clipboard");
-clipboard.on("success", function (e) {
-  $(".copyMsg").text("لینک کپی شد");
-
-  setTimeout(function () {
-    $(".copyMsg").empty();
-  }, 2500);
-});
-
-/*========================= pause video on click btn-close ==============================*/
-$(".motion").on("hidden.bs.modal", function () {
-  $(".motionVideo video").trigger("pause");
-});
-
-/*========================= scripts just for mobile view ==============================*/
+/*===================================== scripts for mobile =====================================*/
 if (window.matchMedia("(max-width: 768px)").matches) {
-  console.log("mobile_view");
+  console.log("mobile scripts");
 }

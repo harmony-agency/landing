@@ -1,0 +1,21 @@
+/* font-weight: 300 */
+@font-face {
+  font-family: roya;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../roya/Far_RoyaBd.woff") format("woff"),
+    url("../roya/W_royaBold.woff") format("woff"),
+    url("../roya/Far_RoyaBd.woff2") format("woff2"),
+    url("../roya/W_royaBold.woff2") format("woff2");
+}
+
+/* font-weight: 300 */
+@font-face {
+  font-family: roya;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../roya/W_roya.woff") format("woff"),
+    url("../roya/Far_Roya.woff") format("woff"),
+    url("../roya/W_roya.woff2") format("woff2"),
+    url("../roya/Far_Roya.woff2") format("woff2");
+}
