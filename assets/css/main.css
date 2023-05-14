@@ -815,11 +815,33 @@ footer .content .social img {
 footer .content .social img:nth-child(3) {
   margin-right: 0;
 }
-footer .copy_right {
-  padding: 7px 0;
-  background: #142faf;
+.harmonyLogo {
+  max-width: 70%;
+}
+.harmonyLogo:hover {
+  opacity: 1;
+}
+.copyright {
+  padding: 10px 0;
   text-align: center;
 }
-footer .copy_right .harmony_logo {
-  width: 140px;
+.copyright .hover-company {
+  opacity: 0;
+  overflow: hidden;
+  width: 0%;
+  margin: 5px;
+  -webkit-transition: width 1000ms ease-in, opacity 1s ease-out;
+  -moz-transition: width 1000ms ease-in, opacity 1s ease-out;
+  -o-transition: width 1000ms ease-in, opacity 1s ease-out;
+  transition: width 1000ms ease-in, opacity 1s ease-out;
+}
+.copyright .logo {
+  width: 30px;
+}
+.copyright .hover-company.active {
+  opacity: 1;
+  width: 80px;
+}
+.copyright .hover-company img {
+  max-width: 70px;
 }
