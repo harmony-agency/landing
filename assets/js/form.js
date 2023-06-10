@@ -96,14 +96,14 @@ function form_otp() {
   }).done(function (data) {
     if (data["success"] == true) {
       myCountDown();
-      $(".errorValidateOtp").hide();
+      $(".errorValidate").hide();
       $(".form.step1").hide();
       $(".form.step2").fadeIn();
       $(".enteredPhone").html($("#phoneNumber").val());
     } else {
       $(".duplicate_number").fadeIn();
-      $(".errorValidateOtp").show();
-      $(".errorValidateOtp").html(data["message"]);
+      $(".errorValidate").show();
+      $(".errorValidate").html(data["message"]);
     }
   });
 }
@@ -133,12 +133,12 @@ function form_submit() {
       // window.dataLayer.push({
       //   event: "formSubmission",
       // });
-      $(".error-submit").hide();
+      $(".errorValidateOtp").hide();
       $(".form.step2").hide();
       $(".form.step3").css("display", "flex");
     } else {
-      $(".error-submit").show();
-      $(".error-submit").html(data["message"]);
+      $(".errorValidateOtp").show();
+      $(".errorValidateOtp").html(data["message"]);
     }
   });
 }

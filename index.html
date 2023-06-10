@@ -8,8 +8,6 @@
     />
     <title>نام لندینگ</title>
     <meta name="description" content="توضیحات لندینگ" />
-
-    <meta name="description" content="" />
     <link rel="icon" type="icon" href="assets/images/favicon.png" />
     <!-- =============== css =============== -->
     <link rel="stylesheet" href="assets/css/aos.css" />
@@ -231,7 +229,7 @@
                   <button type="submit" class="btn callToAction">
                     ثبت اطلاعات
                   </button>
-                  <div class="errorValidateOtp"></div>
+                  <div class="errorValidate"></div>
                 </form>
                 <div class="result"></div>
               </div>
@@ -291,6 +289,8 @@
                         class="code_boxs"
                         placeholder="-"
                         autocomplete="off"
+                        maxlength="1"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                       />
                     </div>
                   </div>
@@ -310,7 +310,7 @@
                   </button>
                 </form>
                 <div class="result"></div>
-                <div class="errorValidate"></div>
+                <div class="errorValidateOtp"></div>
               </div>
               <!-- step3 -->
               <div class="form step3">

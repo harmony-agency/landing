@@ -26,7 +26,6 @@ $referrer= $_POST['referrer'];
 
 if(isset($phoneNumber))  { 
     try {
-
         $sql_select = "SELECT code FROM otp WHERE phone = '$phoneNumber'";
         $verify_code = $pdo->query($sql_select)->fetchColumn();
         if($verify_code ==  $confirm) {
