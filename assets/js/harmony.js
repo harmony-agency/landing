@@ -108,7 +108,6 @@ $(".counter").counterUp({
   time: 1000,
 });
 
-
 /*===================================== timer =====================================*/
 // The data/time we want to countdown to
 var countDownDate = new Date("Oct 15, 2023 00:00:00").getTime();
@@ -211,3 +210,12 @@ var animation = {
 };
 var anim;
 anim = lottie.loadAnimation(animation);
+
+/*===================================== input animation =====================================*/
+
+const handleChange = (event) => {
+  $(".form-control").classList.toggle("has-value", event.target.value);
+};
+$(".form-control").keyup(function () {
+  $(".place_moving").css("translate", "0 -50px");
+});

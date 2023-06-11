@@ -102,6 +102,37 @@ section,
   margin: 0 auto;
 }
 
+.step1 .form-group :is(.place_moving) {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  pointer-events: none;
+  color: #888888;
+  transition: 0.3s;
+}
+.step1 .form-group > .place_moving {
+  right: 10px;
+  translate: 0 -50%;
+  padding: 4px 8px;
+}
+.step1 .form-group > input {
+  height: 56px;
+  width: 220px;
+  padding-right: 16px;
+  border: 2px solid #888888;
+  border-radius: 8px;
+  background: transparent;
+  color: #f9f9f9;
+}
+.step1 .form-group > :is(input:focus, .has-value) {
+  border-color: #8f44fd;
+}
+.step1 .form-group > :is(input:focus, .has-value) ~ .place_moving {
+  background: transparent;
+  color: #151515;
+  translate: 0 -50px;
+}
+
 /*============== callToAction and it's hover ==================*/
 .callToAction {
   background: #ffc439;
@@ -473,9 +504,9 @@ header.stickyHeader {
 }
 #membership .form .form-group {
   width: 100%;
-  min-height: 75px;
   position: relative;
   text-align: right;
+  margin-bottom: 20px;
 }
 #membership .form .form-group label.error {
   margin: 0;

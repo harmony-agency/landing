@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/flip.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -43,7 +44,7 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
     <!-- Design by Harmony Agency -->
 
     <!-- =============== header =============== -->
@@ -238,9 +239,12 @@
                       class="form-control"
                       id="fullName"
                       name="fullName"
-                      placeholder="نام و نام‌ خانوادگی"
                       autocomplete="off"
+                      oninput="handleChange(event)"
                     />
+                    <label for="fullName" class="place_moving"
+                      >نام و نام خانوادگی</label
+                    >
                   </div>
                   <div class="form-group">
                     <input
@@ -248,8 +252,11 @@
                       class="form-control"
                       id="phoneNumber"
                       name="phoneNumber"
-                      placeholder="شماره تماس"
+                      autocomplete="off"
                     />
+                    <label for="fullName" class="place_moving"
+                      >شماره تماس</label
+                    >
                   </div>
                   <button type="submit" class="btn callToAction">
                     ثبت اطلاعات
