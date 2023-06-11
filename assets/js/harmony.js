@@ -27,20 +27,20 @@ if (location.search != "") {
 }
 
 /*===================================== stickyHeader =====================================*/
-jQuery(function ($) {
-  $(window).on("scroll", function () {
-    if (
-      $(this).scrollTop() > $("#call_center").position().top &&
-      $(this).scrollTop() < 5000
-    ) {
-      $("header").addClass("stickyHeader");
-    } else {
-      $("header").removeClass("stickyHeader");
-    }
-  });
-});
+// jQuery(function ($) {
+//   $(window).on("scroll", function () {
+//     if (
+//       $(this).scrollTop() > $("#call_center").position().top &&
+//       $(this).scrollTop() < 5000
+//     ) {
+//       $("header").addClass("stickyHeader");
+//     } else {
+//       $("header").removeClass("stickyHeader");
+//     }
+//   });
+// });
 
-/*===================================== Aos animation =====================================*/
+/*===================================== Aos =====================================*/
 AOS.init();
 
 /*===================================== copy_right =====================================*/
@@ -232,3 +232,16 @@ $(window).on("load", function () {
 $(document).ready(function () {
   console.log("HTML document has been loaded");
 });
+
+
+/*===================================== use lottie animation =====================================*/
+var animation = {
+  container: document.getElementById("myAnimation"), // required
+  path: "assets/animation/data.json", // required
+  renderer: "svg", // required
+  loop: false, // optional
+  autoplay: true, // optional
+  name: "Demo Animation", // optional
+};
+var anim;
+anim = lottie.loadAnimation(animation);

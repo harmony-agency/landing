@@ -1,0 +1,6 @@
+@font-face {
+  font-family: javan;
+  font-style: normal;
+  font-weight: 500;
+  src: url("./javan.woff") format("woff"), url("./javan.woff2") format("woff2");
+}

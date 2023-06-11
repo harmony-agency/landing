@@ -3,50 +3,24 @@
   font-family: Estedad;
   font-style: normal;
   font-weight: 300;
-  src: url("../estedad/eot/Estedad-FD-Light.eot");
-  src: url("../estedad/eot/Estedad-FD-Light.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../estedad/woff/Estedad-FD-Light.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../estedad/woff2/Estedad-FD-Light.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+  src: url("./woff/Estedad-FD-Light.woff") format("woff"),
+    url("./woff2/Estedad-FD-Light.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
 }
 
-/* font-weight normal */
+/* font-weight 400 */
 @font-face {
   font-family: Estedad;
   font-style: normal;
-  font-weight: normal;
-  src: url("../estedad/eot/Estedad-FD-Regular.eot");
-  src: url("../estedad/eot/Estedad-FD-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../estedad/woff/Estedad-FD-Regular.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../estedad/woff2/Estedad-FD-Regular.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+  font-weight: 400;
+  src: url("./woff/Estedad-FD-Regular.woff") format("woff"),
+    url("./woff2/Estedad-FD-Regular.woff2") format("woff2");
 }
 
-/* font-weight bold */
+/* font-weight 700 */
 @font-face {
   font-family: Estedad;
   font-style: normal;
-  font-weight: bold;
-  src: url("../estedad/eot/Estedad-FD-Bold.eot");
-  src: url("../estedad/eot/Estedad-FD-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../estedad/woff/Estedad-FD-Bold.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../estedad/woff2/Estedad-FD-Bold.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
-}
-
-
-/* font-weight 800 */
-@font-face {
-  font-family: Estedad;
-  font-style: normal;
-  font-weight: 800;
-  src: url("../estedad/eot/Estedad-FD-Bold.eot");
-  src: url("../estedad/eot/Estedad-FD-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-8 */ url("../estedad/woff/Estedad-FD-Bold.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-      url("../estedad/woff2/Estedad-FD-Bold.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+  font-weight: 700;
+  src: url("./woff/Estedad-FD-Bold.woff") format("woff"),
+    url("./woff2/Estedad-FD-Bold.woff2") format("woff2");
 }

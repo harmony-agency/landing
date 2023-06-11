@@ -1,27 +1,26 @@
-/* font-weight: 300 */
-@font-face {
-  font-family: "pelak";
-  font-style: normal;
-  font-weight: 900;
-  src:  /* IE6-8 */ url("./PelakFA-ExtraBold.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("./PelakFA-ExtraBold.woff2")
-      format("woff2"); /* FF39+,Chrome36+, Opera24+*/
-}
-
-/* font-weight normal */
-@font-face {
-  font-family: "pelak";
-  font-style: normal;
-  font-weight: 800;
-  src: /* IE6-8 */ url("./Pelak-Bold.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("./Pelak-Bold.woff2")
-      format("woff2"); /* FF39+,Chrome36+, Opera24+*/
-}
+/* font-weight 400 */
 @font-face {
   font-family: "pelak";
   font-style: normal;
   font-weight: 400;
-  src: /* IE6-8 */ url("./Pelak-Medium.woff") format("woff"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("./Pelak-Medium.woff2")
-      format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+  src: url("./woff/Pelak-Medium.woff") format("woff"),
+    url("./woff2/Pelak-Medium.woff2") format("woff2");
+}
+
+/* font-weight 700 */
+@font-face {
+  font-family: "pelak";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./woff/Pelak-Bold.woff") format("woff"),
+    url("./woff2/Pelak-Bold.woff2") format("woff2");
+}
+
+/* font-weight: 900 */
+@font-face {
+  font-family: "pelak";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./woff/PelakFA-ExtraBold.woff") format("woff"),
+    url("./woff2/PelakFA-ExtraBold.woff2") format("woff2");
 }

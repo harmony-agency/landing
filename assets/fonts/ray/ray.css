@@ -1,8 +1,17 @@
-/* font-weight: 300 */
+/* font-weight: 500 */
 @font-face {
   font-family: ray;
   font-style: normal;
-  font-weight: 800;
-  src: url("../ray/WebFaNum/RayFaNum-Bold.woff") format("woff"),
-    url("../ray/WebFaNum/RayFaNum-Bold.woff2") format("woff2");
+  font-weight: 500;
+  src: url("./woff/RayFaNum-Medium.woff") format("woff"),
+    url("./woff2/RayFaNum-Medium.woff2") format("woff2");
+}
+
+/* font-weight: 700 */
+@font-face {
+  font-family: ray;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./woff/RayFaNum-Bold.woff") format("woff"),
+    url("./woff2/RayFaNum-Bold.woff2") format("woff2");
 }
