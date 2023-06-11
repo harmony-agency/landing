@@ -19,7 +19,7 @@ function verifySMS($mobile,$token){
       $fields = array(
           'receptor' => $mobile,
           'token' => $token,
-          'template' => 'pino'
+          'template' => 'harmony'
       );
       
       

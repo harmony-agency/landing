@@ -166,23 +166,26 @@ var persianNumbers = [
     return str;
   };
 
-// ============ sendAgain ============
+/*===================================== sendAgain =====================================*/
 $("#sendAgain").click(function () {
+  $(this).hide();
+  $("#smsTimer").show();
   $("#smsTimer").text("02:00");
   clearInterval(interval);
-  myCountDown();
+  countdown();
   form_otp();
 });
 
-// ============ editMobile ============
+/*===================================== editMobile =====================================*/
 $("#editMobile").click(function () {
   $(".form.step2").hide();
   $(".form.step1").fadeIn();
+  $("#phoneNumber").focus();
 });
 
 // ============ otp timer function ============
 var interval;
-function myCountDown() {
+function countdown() {
   clearInterval(interval);
   interval = setInterval(function () {
     var timer = $("#smsTimer").html();
@@ -191,6 +194,7 @@ function myCountDown() {
     var seconds = timer[1];
     seconds -= 1;
     if (minutes == 0 && seconds == 0) {
+      $("#smsTimer").hide();
       $("#sendAgain").show();
       return;
     } else if (seconds < 0 && minutes != 0) {
