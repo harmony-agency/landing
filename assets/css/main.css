@@ -853,26 +853,41 @@ footer .content .social img:nth-child(3) {
   opacity: 1;
 }
 .copyright {
-  padding: 10px 0;
   text-align: center;
+  padding: 10px 0;
+}
+.copyright img {
+  max-width: 100px;
+  opacity: 0.8;
+  margin: 0 auto;
+}
+.copyright .harmonyLogo {
+  max-width: 70%;
+  opacity: 0.6;
+}
+.copyright .harmonyLogo {
+  max-width: 70%;
+  opacity: 0.6;
+}
+.copyright .harmonyLogo:hover {
+  opacity: 1;
 }
 .copyright .hover-company {
   opacity: 0;
   overflow: hidden;
   width: 0%;
+  height: 50px;
   margin: 5px;
+  color: #a7a7a7;
   -webkit-transition: width 1000ms ease-in, opacity 1s ease-out;
   -moz-transition: width 1000ms ease-in, opacity 1s ease-out;
   -o-transition: width 1000ms ease-in, opacity 1s ease-out;
   transition: width 1000ms ease-in, opacity 1s ease-out;
 }
 .copyright .logo {
-  width: 30px;
+  opacity: 0.7;
 }
 .copyright .hover-company.active {
   opacity: 1;
-  width: 80px;
-}
-.copyright .hover-company img {
-  max-width: 70px;
+  width: 100%;
 }

@@ -30,8 +30,30 @@ function clickEvent(first, last) {
   }
 }
 
+function toasterOptions() {
+  toastr.options = {
+    closeButton: false,
+    debug: false,
+    newestOnTop: false,
+    progressBar: true,
+    positionClass: "toast-top-right",
+    preventDuplicates: true,
+    onclick: null,
+    showDuration: "300",
+    hideDuration: "1000",
+    timeOut: "5000",
+    extendedTimeOut: "1000",
+    showEasing: "swing",
+    hideEasing: "linear",
+    showMethod: "fadeIn",
+    hideMethod: "fadeOut",
+  };
+}
+
 // ============ validation ============
 $(document).ready(function () {
+  toasterOptions();
+
   //subscribers validate
   $("#subscribers").validate({
     // initialize the plugin
@@ -47,12 +69,20 @@ $(document).ready(function () {
     },
     messages: {
       fullName: {
-        required: "لطفا نام خود را وارد کنید",
+        required: function () {
+          toastr.warning("لطفا نام خود را وارد کنید");
+        },
       },
       phoneNumber: {
-        required: "لطفا شماره تماس خود را وارد کنید",
-        minlength: "شماره تماس وارد شده معتبر نیست",
-        maxlength: "شماره تماس وارد شده معتبر نیست",
+        required: function () {
+          toastr.warning("لطفا شماره تماس خود را وارد کنید");
+        },
+        minlength: function () {
+          toastr.error("شماره تماس وارد شده معتبر نیست");
+        },
+        maxlength: function () {
+          toastr.error("شماره تماس وارد شده معتبر نیست");
+        },
       },
     },
     submitHandler: function () {
@@ -71,9 +101,15 @@ $(document).ready(function () {
     },
     messages: {
       confirm: {
-        required: "لطفا  کد ارسال شده  را وارد کنید",
-        minlength: " کد وارد شده معتبر نیست",
-        maxlength: " کد وارد شده معتبر نیست",
+        required: function () {
+          toastr.warning("لطفا کد ارسال شده را وارد کنید");
+        },
+        minlength: function () {
+          toastr.error("کد ارسال شده معتبر نیست");
+        },
+        maxlength: function () {
+          toastr.error("کد ارسال شده معتبر نیست");
+        },
       },
     },
     submitHandler: function () {
@@ -95,15 +131,13 @@ function form_otp() {
     encode: true,
   }).done(function (data) {
     if (data["success"] == true) {
-      myCountDown();
+      countdown();
       $(".errorValidate").hide();
       $(".form.step1").hide();
       $(".form.step2").fadeIn();
       $(".enteredPhone").html($("#phoneNumber").val());
     } else {
-      $(".duplicate_number").fadeIn();
-      $(".errorValidate").show();
-      $(".errorValidate").html(data["message"]);
+      toastr.error(" این شماره قبلا وارد شده است");
     }
   });
 }
@@ -133,12 +167,8 @@ function form_submit() {
       // window.dataLayer.push({
       //   event: "formSubmission",
       // });
-      $(".errorValidateOtp").hide();
       $(".form.step2").hide();
       $(".form.step3").css("display", "flex");
-    } else {
-      $(".errorValidateOtp").show();
-      $(".errorValidateOtp").html(data["message"]);
     }
   });
 }

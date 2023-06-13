@@ -113,7 +113,7 @@ if(isset($phone) && $statusToken)  {
                         $pdo->exec($sql_update);
                         $data['message'] =  "Success Update";
 
-                      }else{
+                      } else {
 
                         $sql_insert = "INSERT INTO otp (phone, code, count)
 

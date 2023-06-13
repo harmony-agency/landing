@@ -59,6 +59,7 @@ jQuery(function ($) {
 AOS.init();
 
 /*===================================== copy_right =====================================*/
+// hover for copy right
 $(".copyright a").hover(
   function () {
     let logo = $(".copyright .hover-company");
