@@ -36,7 +36,7 @@ include "jdf.php";
 <?php 
 if(isset($_POST['excel_output']))
 {
-    if(isset($_POST['pass']) && $_POST['pass'] == "harmony@wetalk"){
+    if(isset($_POST['pass']) && $_POST['pass'] == "harmony@landingName"){
        $res_list = [];
        $sql_order="SELECT * FROM subscribers ORDER BY date DESC";
        print_r($sql_order);
@@ -86,7 +86,7 @@ function xlsx_export( $res_data )
                     ->setLastModifiedBy("file excel landing $LandingName")
                     ->setTitle("'گزارش خروجی اکسل لندینگ $LandingName'")
                     ->setSubject("گزارش لندینگ $LandingName")
-                    ->setDescription("این یک گزارش کامل از نواتل می باشد")
+                    ->setDescription("این یک گزارش کامل از لنیدنگ می باشد")
                     ->setKeywords("$LandingName");
 
       // Add some data
@@ -98,7 +98,6 @@ function xlsx_export( $res_data )
       $objSpreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(20);
       $objSpreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(20);
       $objSpreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(20);
-      $objSpreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(20);
       $objSpreadsheet->setActiveSheetIndex(0)
                      ->setCellValue('A1', 'نام')
                      ->setCellValue('B1', 'شماره تماس')

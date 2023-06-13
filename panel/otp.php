@@ -1,5 +1,7 @@
 <?php
-include "config.php";
+include_once "database.php";
+include_once "security.php";
+
 function validate_number($mobile_number){
     if(preg_match('/^[0-9]9[0-9]*$/', $mobile_number)) {
         // the format /^[0-9]{11}+$/ will check for mobile number with 11 digits and only numbers
@@ -11,7 +13,7 @@ function validate_number($mobile_number){
     
 function verifySMS($mobile,$token){
 
-  $apiKey = '34766A373652457777676B464E2F344E6B653172564559504C7A356F643744654E454B4558564B554B68633D';
+  $apiKey = '4F652F69774D765350457153455638796B506A31474B33774D333571677A6E61766A6E314350386A50624D3D';
         $url = "https://api.kavenegar.com/v1/$apiKey/verify/lookup.json";
       
       $curl = curl_init();
@@ -63,9 +65,21 @@ function generateNumericOTP() {
 $data = [];
 $phone =strval($_POST['phone']);
 
+// Start Security
 
+$statusToken = false;
+$headers = getallheaders();
+    
 
-if(isset($phone) )  {   
+if (isset($headers['token'])) {
+    
+     $statusToken = checkajaxSecurity($headers['token']);
+  
+}        
+
+// END Security
+
+if(isset($phone) && $statusToken)  {   
                 if(validate_number($phone) == false) 
                 {
                     $data['message'] = 'لطفا شماره تماس معتبر وارد کنید.';
@@ -127,6 +141,9 @@ if(isset($phone) )  {
 
                 }
 
+ }else{
+             $data['success'] = false;
+              $data['message'] =  'Access Denied';
  }     
 
 echo json_encode($data);

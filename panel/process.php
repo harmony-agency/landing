@@ -1,5 +1,7 @@
 <?php
-include "config.php";
+include_once "database.php";
+include_once "security.php";
+
 $data = [];
 
 function validate_number($mobile_number){
@@ -23,32 +25,41 @@ $utm_term = $_POST['utm_term'];
 $utm_content = $_POST['utm_content'];
 $referrer= $_POST['referrer'];
 
+// Start Security
+$statusToken = false;
+$headers = getallheaders();
+    
 
-if(isset($phoneNumber))  { 
+if (isset($headers['token'])) {
+    
+     $statusToken = checkajaxSecurity($headers['token']);
+  
+}  
+
+// End Security
+
+if(isset($phoneNumber) && $statusToken)  { 
     try {
-        $sql_select = "SELECT code FROM otp WHERE phone = '$phoneNumber'";
-        $verify_code = $pdo->query($sql_select)->fetchColumn();
-        if($verify_code ==  $confirm) {
-            $sql = "INSERT INTO subscribers (fullName, phoneNumber ,  utm_source ,  utm_medium , utm_campaign , utm_term , utm_content , referrer)
-                    VALUES ('$fullName', '$phoneNumber' , '$utm_source' ,  '$utm_medium' , '$utm_campaign' , '$utm_term' , '$utm_content', '$referrer')";
-                    // use exec() because no results are returned
-                    $pdo->exec($sql);
-                    sendMail($fullName , $phoneNumber);
-                    $data['success'] = true;
-                    $data['message'] = "<h2 class='success'>نظر شما با موفقیت ثبت شد</h2>";
-        } else {
-            $data['success'] = false;
-            $data['message'] =  "کد وارد شده صحیح نمی باشد";
-        }
-    }
+        $sql = "INSERT INTO subscribers (fullName, phoneNumber ,  utm_source ,  utm_medium , utm_campaign , utm_term , utm_content , referrer)
+                  VALUES ('$fullName', '$phoneNumber' , '$utm_source' ,  '$utm_medium' , '$utm_campaign' , '$utm_term' , '$utm_content', '$referrer')";
+                  // use exec() because no results are returned
+                  $pdo->exec($sql);
+                  sendMail($fullName , $phoneNumber);
+                  $data['success'] = true;
+                  $data['message'] = "<h2 class='success'>نظر شما با موفقیت ثبت شد</h2>";
+    } 
     catch(PDOException $e) {
-            $data['message'] =  $sql . "<br>" . $e->getMessage();
+                  $data['message'] =  $sql . "<br>" . $e->getMessage();
     }
 
-} 
+} else {
+             $data['success'] = false;
+              $data['message'] =  'Access Denied';
+ 
+}
 
 function sendMail($fullName , $phoneNumber ) {
-    $to = "vahidehasemi@gmail.com";
+    $to = "test@gmail.com";
     $subject = "new subscribe";
     $message = "
     <html>
@@ -56,7 +67,6 @@ function sendMail($fullName , $phoneNumber ) {
     <title>HTML email</title>
     </head>
     <body>
-    <p>This email contains HTML Tags!</p>
     <table>
     <tr>
     <th>نام و نام خانوادگی</th>

@@ -1,3 +1,21 @@
+$(document).ready(function () {
+  console.log("HTML document has been loaded");
+  $.ajax("panel/security.php", {
+    dataType: "json", // type of response data
+    data: { token: true },
+    success: function (data) {
+      // success callback function
+      if (data["status"] == true) {
+        $('meta[name="token"]').attr("content", data["token"]);
+      }
+    },
+    error: function (errorMessage) {
+      // error callback
+      console.log(errorMessage);
+    },
+  });
+});
+
 (function ($) {
   $.QueryString = (function (a) {
     if (a == "") return {};
@@ -193,10 +211,6 @@ if (window.matchMedia("(max-width: 768px)").matches) {
 
 $(window).on("load", function () {
   console.log("all content (e.g. images) has been loaded.");
-});
-
-$(document).ready(function () {
-  console.log("HTML document has been loaded");
 });
 
 /*===================================== use lottie animation =====================================*/
