@@ -6,7 +6,7 @@ $(document).ready(function () {
     success: function (data) {
       // success callback function
       if (data["status"] == true) {
-        $('meta[name="token"]').attr("content", data["token"]);
+        localStorage.setItem('token', data["token"])
       }
     },
     error: function (errorMessage) {

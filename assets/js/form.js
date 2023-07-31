@@ -120,12 +120,14 @@ $(document).ready(function () {
 
 // ============ form_otp ============
 function form_otp() {
+  var token = localStorage.getItem('token');
   var formDataOtp = {
     phone: persianToEnglish($("#phoneNumber").val()),
   };
   $.ajax({
     type: "POST",
     url: "panel/otp.php",
+    headers: {"token": token},
     data: formDataOtp,
     dataType: "json",
     encode: true,
