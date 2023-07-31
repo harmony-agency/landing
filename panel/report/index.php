@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-include "../config.php";
+include "../database.php";
 include "jdf.php";
 ?>
 <!DOCTYPE html>
