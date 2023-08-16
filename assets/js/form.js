@@ -57,32 +57,34 @@ $(document).ready(function () {
   //subscribers validate
   $("#subscribers").validate({
     // initialize the plugin
-    rules: {
-      fullName: {
-        required: true,
-      },
-      phoneNumber: {
-        required: true,
-        minlength: 11,
-        maxlength: 11,
-      },
+    fullName: {
+      required: true,
+    },
+    phoneNumber: {
+      required: true,
+      minlength: 11,
+      maxlength: 11,
+    },
+    subject: {
+      required: true,
+    },
+    email: {
+      required: true,
     },
     messages: {
       fullName: {
-        required: function () {
-          toastr.warning("لطفا نام خود را وارد کنید");
-        },
+        required: "لطفا نام خود را وارد کنید",
       },
       phoneNumber: {
-        required: function () {
-          toastr.warning("لطفا شماره تماس خود را وارد کنید");
-        },
-        minlength: function () {
-          toastr.error("شماره تماس وارد شده معتبر نیست");
-        },
-        maxlength: function () {
-          toastr.error("شماره تماس وارد شده معتبر نیست");
-        },
+        required: "لطفا شماره تماس خود را وارد کنید",
+        minlength: "شماره تماس وارد شده معتبر نیست",
+        maxlength: "شماره تماس وارد شده معتبر نیست",
+      },
+      subject: {
+        required: "لطفا نام موضوع خود را وارد کنید",
+      },
+      email: {
+        required: "لطفا ایمیل خود را وارد کنید",
       },
     },
     submitHandler: function () {
@@ -99,17 +101,18 @@ $(document).ready(function () {
         maxlength: 4,
       },
     },
+    rules: {
+      confirm: {
+        required: true,
+        minlength: 3,
+        maxlength: 4,
+      },
+    },
     messages: {
       confirm: {
-        required: function () {
-          toastr.warning("لطفا کد ارسال شده را وارد کنید");
-        },
-        minlength: function () {
-          toastr.error("کد ارسال شده معتبر نیست");
-        },
-        maxlength: function () {
-          toastr.error("کد ارسال شده معتبر نیست");
-        },
+        required: "لطفا کد تایید را وارد کنید",
+        minlength: "کد تایید وارد شده معتبر نیست",
+        maxlength: "کد تایید وارد شده معتبر نیست",
       },
     },
     submitHandler: function () {
@@ -120,14 +123,14 @@ $(document).ready(function () {
 
 // ============ form_otp ============
 function form_otp() {
-  var token = localStorage.getItem('token');
+  var token = localStorage.getItem("token");
   var formDataOtp = {
     phone: persianToEnglish($("#phoneNumber").val()),
   };
   $.ajax({
     type: "POST",
     url: "panel/otp.php",
-    headers: {"token": token},
+    headers: { token: token },
     data: formDataOtp,
     dataType: "json",
     encode: true,
@@ -149,6 +152,8 @@ function form_submit() {
   var formDataSubscriber = {
     fullName: $("#fullName").val(),
     phoneNumber: persianToEnglish($("#phoneNumber").val()),
+    subject: persianToEnglish($("#subject").val()),
+    email: persianToEnglish($("#email").val()),
     confirm: persianToEnglish($("#confirm").val()),
     utm_source: sessionStorage.getItem("utm_source"),
     utm_campaign: sessionStorage.getItem("utm_campaign"),
@@ -171,6 +176,8 @@ function form_submit() {
       // });
       $(".form.step2").hide();
       $(".form.step3").css("display", "flex");
+    } else {
+      toastr.error(data["message"]);
     }
   });
 }
