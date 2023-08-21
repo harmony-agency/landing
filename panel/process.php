@@ -17,7 +17,7 @@ function validate_number($mobile_number){
 
 $fullName = $_POST['fullName'];
 $phoneNumber = $_POST['phoneNumber'];
-$confirm = $_POST['confirm'];
+$email = $_POST['email'];
 $utm_source = $_POST['utm_source'];
 $utm_campaign = $_POST['utm_campaign'];
 $utm_medium = $_POST['utm_medium'];
@@ -40,11 +40,10 @@ if (isset($headers['token'])) {
 
 if(isset($phoneNumber) && $statusToken)  { 
     try {
-        $sql = "INSERT INTO subscribers (fullName, phoneNumber ,  utm_source ,  utm_medium , utm_campaign , utm_term , utm_content , referrer)
-                  VALUES ('$fullName', '$phoneNumber' , '$utm_source' ,  '$utm_medium' , '$utm_campaign' , '$utm_term' , '$utm_content', '$referrer')";
+        $sql = "INSERT INTO subscribers (fullName, phoneNumber , email, utm_source ,  utm_medium , utm_campaign , utm_term , utm_content , referrer)
+                  VALUES ('$fullName', '$phoneNumber' , '$email' , '$utm_source' ,  '$utm_medium' , '$utm_campaign' , '$utm_term' , '$utm_content', '$referrer')";
                   // use exec() because no results are returned
                   $pdo->exec($sql);
-                  sendMail($fullName , $phoneNumber);
                   $data['success'] = true;
                   $data['message'] = "<h2 class='success'>نظر شما با موفقیت ثبت شد</h2>";
     } 
@@ -58,43 +57,9 @@ if(isset($phoneNumber) && $statusToken)  {
  
 }
 
-function sendMail($fullName , $phoneNumber ) {
-    $to = "test@gmail.com";
-    $subject = "new subscribe";
-    $message = "
-    <html>
-    <head>
-    <title>HTML email</title>
-    </head>
-    <body>
-    <table>
-    <tr>
-    <th>نام و نام خانوادگی</th>
-    <th>شماره تماس</th>
-    </tr>
-    <tr>
-    <td> $fullName  </td>
-    <td> $phoneNumber </td>
-    </tr>
-    </table>
-    </body>
-    </html>
-    ";
-    
-    // Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    
-    // More headers
-    $headers .= 'From: <info@example.com>' . "\r\n";
-    
-    mail($to,$subject,$message,$headers); 
-}
 
 
 
 
 echo json_encode($data);
 exit();
-
-

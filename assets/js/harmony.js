@@ -1,12 +1,12 @@
 $(document).ready(function () {
-  console.log("HTML document has been loaded");
+  // console.log("HTML document has been loaded");
   $.ajax("panel/security.php", {
     dataType: "json", // type of response data
     data: { token: true },
     success: function (data) {
       // success callback function
       if (data["status"] == true) {
-        localStorage.setItem('token', data["token"])
+        localStorage.setItem("token", data["token"]);
       }
     },
     error: function (errorMessage) {
@@ -90,78 +90,10 @@ $("a").click(function (event) {
   event.preventDefault();
 });
 
-/*===================================== clipboard =====================================*/
-$(".copy_code_btn").click(function (event) {
-  // Get the text field
-  var copyText = document.getElementById("copy_code");
-
-  // Select the text field
-  copyText.select();
-  //   copyText.setSelectionRange(0, 99999); // For mobile devices
-
-  // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-  $(".alert_copy").fadeIn();
-
-  // Alert the copied text
-  const myTimeout2 = setTimeout(myGreeting2, 2000);
-
-  function myGreeting2() {
-    $(".alert_copy").fadeOut();
-  }
-});
-
-/*===================================== starter_video =====================================*/
-$("#starter_video").click(function () {
-  $(".play").fadeOut();
-});
-
-$(".play").click(function () {
-  $(this).fadeOut();
-  $(this).siblings("#starter_video").trigger("play");
-});
-
-/*===================================== counter =====================================*/
-$(".counter").counterUp({
-  delay: 5,
-  time: 1000,
-});
-
-/*===================================== timer =====================================*/
-// The data/time we want to countdown to
-var countDownDate = new Date("Oct 15, 2023 00:00:00").getTime();
-
-// Run myfunc every second
-var myfunc = setInterval(function () {
-  var now = new Date().getTime();
-  var timeleft = countDownDate - now;
-
-  // Calculating the days, hours, minutes and seconds left
-  var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-  // Result is output to the specific element
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("mins").innerHTML = minutes;
-  document.getElementById("secs").innerHTML = seconds;
-
-  // Display the message when countdown is over
-  if (timeleft < 0) {
-    clearInterval(myfunc);
-    document.getElementById("days").innerHTML = "";
-    document.getElementById("hours").innerHTML = "";
-    document.getElementById("mins").innerHTML = "";
-    document.getElementById("secs").innerHTML = "";
-  }
-}, 1000);
-
 /*===================================== swiper =====================================*/
 var testimonial_Swiper = new Swiper(".testimonial_Swiper", {
-  slidesPerView: 3,
-  spaceBetween: 50,
+  slidesPerView: 1,
+  spaceBetween: 0,
   centeredSlides: true,
   loop: true,
   speed: 2000,
@@ -180,57 +112,154 @@ var testimonial_Swiper = new Swiper(".testimonial_Swiper", {
   },
   breakpoints: {
     320: {
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       spaceBetween: 20,
+    },
+  },
+});
+
+$(window).on("load", function () {
+  // console.log("all content (e.g. images) has been loaded.");
+});
+
+/*===================================== swiper =====================================*/
+var litr_swiper = new Swiper(".litr_swiper", {
+  spaceBetween: 20,
+  loop: true,
+  speed: 2000,
+  allowTouchMove: false,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: true,
+  // },
+  pagination: {
+    el: ".litr_box .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".litr_box .swiper-button-next",
+    prevEl: ".litr_box .swiper-button-prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.3,
+      centeredSlides: true,
     },
     768: {
       slidesPerView: 3,
-      spaceBetween: 50,
+      centeredSlides: false,
+    },
+    1400: {
+      slidesPerView: 4,
+      centeredSlides: false,
     },
   },
 });
 
-/*===================================== click function =====================================*/
-$(".callToAction").click(function () {
-  console.log("click");
-});
-
-/*===================================== hover function =====================================*/
-$(".callToAction").hover(
-  function () {
-    console.log("hover");
+var glass_swiper = new Swiper(".glass_swiper", {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  loop: true,
+  speed: 2000,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: true,
+  // },
+  pagination: {
+    el: ".litr_box .swiper-pagination",
+    clickable: true,
   },
-  function () {
-    console.log("not hover");
-  }
-);
-
-/*===================================== scripts for mobile =====================================*/
-if (window.matchMedia("(max-width: 768px)").matches) {
-  console.log("mobile scripts");
-}
-
-$(window).on("load", function () {
-  console.log("all content (e.g. images) has been loaded.");
+  navigation: {
+    nextEl: ".glass_box .swiper-button-next",
+    prevEl: ".glass_box .swiper-button-prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.3,
+      centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 3,
+      centeredSlides: false,
+    },
+    1400: {
+      slidesPerView: 4,
+      centeredSlides: false,
+    },
+  },
 });
 
-/*===================================== use lottie animation =====================================*/
-var animation = {
-  container: document.getElementById("myAnimation"), // required
-  path: "assets/animation/data.json", // required
-  renderer: "svg", // required
-  loop: false, // optional
-  autoplay: true, // optional
-  name: "Demo Animation", // optional
-};
-var anim;
-anim = lottie.loadAnimation(animation);
+var cc_swiper = new Swiper(".cc_swiper", {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  loop: true,
+  speed: 2000,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: true,
+  // },
+  pagination: {
+    el: ".litr_box .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".cc_box .swiper-button-next",
+    prevEl: ".cc_box .swiper-button-prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.3,
+      centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 3,
+      centeredSlides: false,
+    },
+    1400: {
+      slidesPerView: 4,
+      centeredSlides: false,
+    },
+  },
+});
 
-/*===================================== input animation =====================================*/
+$(document).ready(function () {
+  $("#products .swiper-slide").click(function (event) {
+    let product_selected = $(this).find(".slide_content").data("value");
 
-const handleChange = (event) => {
-  $(".form-control").classList.toggle("has-value", event.target.value);
-};
-$(".form-control").keyup(function () {
-  $(".place_moving").css("translate", "0 -50px");
+    get_info(product_selected);
+
+    let product_img = $(this).find(".product_img").attr("src");
+    let product_name = $(this).find(".product_name").text();
+    let product_category = $(this).find(".product_category").text();
+    $("#informationModal .product_img").attr("src", product_img);
+    $("#informationModal .product_name").html(product_name);
+    $("#informationModal .product_category").html(product_category);
+  });
+
+  function get_info(product_selected) {
+    let data = {
+      data_id: product_selected,
+    };
+    $.ajax({
+      type: "POST",
+      url: "./panel/api/getData.php",
+      dataType: "json",
+      data: data,
+      encode: true,
+    }).done(function (data) {
+      const response = JSON.stringify(data);
+      var obj = $.parseJSON(response);
+      $(".product_description").html(obj[0].description);
+      $(".product_package").html(obj[0].category);
+      $(".product_property").html(obj[0].property);
+      // value table
+      $(".calories_value").html(obj[0].calories);
+      $(".cholesterol_value").html(obj[0].cholesterol);
+      $(".sodium_value").html(obj[0].sodium);
+      $(".potassium_value").html(obj[0].potassium);
+      $(".carbohydrate_value").html(obj[0].carbohydrate);
+      $(".protein_value").html(obj[0].protein);
+      $(".fat_value").html(obj[0].fat);
+    });
+  }
 });

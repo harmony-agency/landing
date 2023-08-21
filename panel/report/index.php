@@ -6,15 +6,17 @@ include "jdf.php";
 ?>
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/css/style.css" >
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>
-    گزارش لندینگ
+        گزارش لندینگ
     </title>
 </head>
+
 <body>
     <div class="wrapper">
         <div class="inner-wrapper">
@@ -27,13 +29,14 @@ include "jdf.php";
                     </div>
                     <form action="" method="post" class="form-signin">
                         <div class="frm-input">
-                            <input type="password" name="pass" placeholder="رمز عبور" >
+                            <input type="password" name="pass" placeholder="رمز عبور">
                         </div>
-                      <button name="excel_output" class="btn btn-lg btn-primary" type="submit"><img src="assets/images/icon.png" /> خروجی اکسل</button>
-                      
+                        <button name="excel_output" class="btn btn-lg btn-primary" type="submit"><img
+                                src="assets/images/icon.png" /> خروجی اکسل</button>
+
                     </form>
 
-<?php 
+                    <?php 
 if(isset($_POST['excel_output']))
 {
     if(isset($_POST['pass']) && $_POST['pass'] == "harmony@landingName"){
@@ -47,6 +50,7 @@ if(isset($_POST['excel_output']))
              $res_list[] = [
                 'fullName' => $row['fullName'],
                 'phoneNumber' => $row['phoneNumber'],
+                'email' => $row['phoneNumber'],
                 'utm_source' =>  $row['utm_source'],
                 'utm_medium' =>  $row['utm_medium'],
                 'utm_term' =>  $row['utm_term'],
@@ -86,7 +90,7 @@ function xlsx_export( $res_data )
                     ->setLastModifiedBy("file excel landing $LandingName")
                     ->setTitle("'گزارش خروجی اکسل لندینگ $LandingName'")
                     ->setSubject("گزارش لندینگ $LandingName")
-                    ->setDescription("این یک گزارش کامل از لنیدنگ می باشد")
+                    ->setDescription("این یک گزارش کامل از لنیدنگ سن ایچ می باشد")
                     ->setKeywords("$LandingName");
 
       // Add some data
@@ -101,12 +105,13 @@ function xlsx_export( $res_data )
       $objSpreadsheet->setActiveSheetIndex(0)
                      ->setCellValue('A1', 'نام')
                      ->setCellValue('B1', 'شماره تماس')
-                     ->setCellValue('C1', 'utm_source')
-                     ->setCellValue('D1', 'utm_medium')
-                     ->setCellValue('E1', 'utm_campaign')
-                     ->setCellValue('F1', 'utm_term')
-                     ->setCellValue('G1', 'utm_content')
-                     ->setCellValue('H1', 'تاریخ');
+                     ->setCellValue('C1', 'ایمیل')
+                     ->setCellValue('D1', 'utm_source')
+                     ->setCellValue('E1', 'utm_medium')
+                     ->setCellValue('F1', 'utm_campaign')
+                     ->setCellValue('G1', 'utm_term')
+                     ->setCellValue('H1', 'utm_content')
+                     ->setCellValue('I1', 'تاریخ');
 
       
       $row = 2;
@@ -115,12 +120,13 @@ function xlsx_export( $res_data )
          $objSpreadsheet->setActiveSheetIndex(0)
                          ->setCellValue('A'.$row, $res_data_item['fullName'])
                          ->setCellValue('B'.$row, $res_data_item['phoneNumber'])
-                         ->setCellValue('C'.$row, $res_data_item['utm_source'])
-                         ->setCellValue('D'.$row, $res_data_item['utm_medium'])
-                         ->setCellValue('E'.$row, $res_data_item['utm_campaign'])
-                         ->setCellValue('F'.$row, $res_data_item['utm_term'])
-                         ->setCellValue('G'.$row, $res_data_item['utm_content'])
-                         ->setCellValue('H'.$row, $res_data_item['date']);
+                         ->setCellValue('C'.$row, $res_data_item['email'])
+                         ->setCellValue('DC'.$row, $res_data_item['utm_source'])
+                         ->setCellValue('E'.$row, $res_data_item['utm_medium'])
+                         ->setCellValue('F'.$row, $res_data_item['utm_campaign'])
+                         ->setCellValue('G'.$row, $res_data_item['utm_term'])
+                         ->setCellValue('H'.$row, $res_data_item['utm_content'])
+                         ->setCellValue('I'.$row, $res_data_item['date']);
          $row++;
       }
 
@@ -152,16 +158,21 @@ function xlsx_export( $res_data )
 
 ?>
 
-                 </div><!--End form inner-->
-            </div><!--End form content -->
+                </div>
+                <!--End form inner-->
+            </div>
+            <!--End form content -->
 
-        </div><!--End inner wrapper -->
-    </div><!--End Wrapper -->
-      
+        </div>
+        <!--End inner wrapper -->
+    </div>
+    <!--End Wrapper -->
+
     <div class="copyright">
         <a href="https://harmony.agency" target="_blank" rel="noopener follow">
             <img src="assets/images/harmony.png" />
         </a>
-    </div> 
+    </div>
 </body>
+
 </html>
