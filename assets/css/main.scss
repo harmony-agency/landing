@@ -1,10 +1,8 @@
 @import url(../fonts/dana/dana.css);
-@import "responsive";
+// @import "responsive";
 $primary_color_1: #ffc439;
 $primary_color_2: #1b05ac;
 $primary_color_3: #878f99;
-$primary_font: 24px;
-$primary_font_weight: 700;
 /*=========================== general =====================*/
 *,
 html {
@@ -144,7 +142,7 @@ section,
   background: $primary_color_1;
   border-radius: 50px;
   color: $primary_color_2;
-  font-weight: $primary_font_weight;
+  font-weight: 700;
   font-size: 18px;
   line-height: 1.9;
   padding: 5.5px 32px;
@@ -159,7 +157,7 @@ section,
   background: $primary_color_2;
   border-radius: 50px;
   color: $primary_color_1;
-  font-weight: $primary_font_weight;
+  font-weight: 700;
   font-size: 18px;
   line-height: 1.9;
   padding: 5.5px 32px;
@@ -194,7 +192,7 @@ header {
     padding: 18px 0;
     .title {
       color: $primary_color_2;
-      font-weight: $primary_font_weight;
+      font-weight: 700;
       font-size: 22px;
       line-height: 32px;
       margin: 0;
@@ -206,7 +204,7 @@ header {
       align-items: center;
       .subtitle {
         color: #4d62cd;
-        font-weight: $primary_font_weight;
+        font-weight: 700;
         font-size: 18px;
         line-height: 34px;
         margin: 0;
@@ -224,8 +222,8 @@ header.stickyHeader {
 
 /*================================ section-title ================================*/
 .section_title {
-  font-weight: $primary_font_weight;
-  font-size: $primary_font;
+  font-weight: 700;
+  font-size: 24px;
   line-height: 35px;
   color: $primary_color_2;
   text-align: center;
@@ -535,7 +533,7 @@ header.stickyHeader {
   opacity: 0.7;
 }
 .false_number {
-  font-weight: $primary_font_weight;
+  font-weight: 700;
   font-size: 18px;
   line-height: 18px;
   text-align: center;
@@ -566,7 +564,7 @@ header.stickyHeader {
 }
 #smsTimer {
   font-size: 16px;
-  font-weight: $primary_font_weight;
+  font-weight: 700;
   margin: 0 0 0 10px;
 }
 #sendAgain {
@@ -700,7 +698,7 @@ header.stickyHeader {
     padding: 16px 42px;
   }
   .accordion-button:not(.collapsed) {
-    font-weight: $primary_font_weight;
+    font-weight: 700;
     background-color: #dce4f5;
     box-shadow: none;
     margin-bottom: 8px;
