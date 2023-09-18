@@ -8,6 +8,13 @@ if(isset($_GET['token'])){
     $_SESSION['token'] = $token;
     ajaxSecurity($token);
 }
+// Function to check string starting
+// with given substring
+function startsWith ($string, $startString)
+{
+    $len = strlen($startString);
+    return (substr($string, 0, $len) === $startString);
+}
 
 function ajaxSecurity($csrf)
 {
@@ -15,10 +22,12 @@ function ajaxSecurity($csrf)
 
     if ($_SERVER["HTTP_X_REQUESTED_WITH"] == "XMLHttpRequest") {
         //Request identified as ajax request
+        $check_baseurl  = startsWith($_SERVER["HTTP_REFERER"],$_ENV["url"]);
+
         if (
             isset($_SERVER["HTTP_REFERER"]) &&
-            $_SERVER["HTTP_REFERER"] == $_ENV["url"]
-        ) {
+            $check_baseurl
+          ) {
             //HTTP_REFERER verification
             if ($csrf == $_SESSION["token"]) {
 
@@ -45,9 +54,12 @@ function checkajaxSecurity($csrf)
 
     if ($_SERVER["HTTP_X_REQUESTED_WITH"] == "XMLHttpRequest") {
         //Request identified as ajax request
+
+        $check_baseurl  = startsWith($_SERVER["HTTP_REFERER"],$_ENV["url"]);
+
         if (
             isset($_SERVER["HTTP_REFERER"]) &&
-            $_SERVER["HTTP_REFERER"] == $_ENV["url"]
+            $check_baseurl 
         ) {
             //HTTP_REFERER verification
             if ($csrf == $_SESSION["token"]) {

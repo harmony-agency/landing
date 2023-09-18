@@ -123,7 +123,7 @@ $(document).ready(function () {
 
 // ============ form_otp ============
 function form_otp() {
-  var token = localStorage.getItem("token");
+  var token = sessionStorage.getItem("token");
   var formDataOtp = {
     phone: persianToEnglish($("#phoneNumber").val()),
   };
