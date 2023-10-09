@@ -18,8 +18,7 @@
   }
   .section_caption {
     font-size: 14px;
-    -moz-text-align-last: right;
-         text-align-last: right;
+    text-align-last: right;
     margin: 0 auto 24px;
     max-width: 100%;
   }
@@ -44,15 +43,18 @@
     line-height: 32px;
     margin: 0;
     text-align: right;
-    -moz-text-align-last: right;
-         text-align-last: right;
+    text-align-last: right;
   }
   header .content .info {
     width: 100%;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   header .content .info .subtitle {
     font-size: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   header .content .info .subtitle span {
@@ -72,22 +74,21 @@
     line-height: 26px;
     margin: 0 auto 8px;
     text-align: center;
-    -moz-text-align-last: center;
-         text-align-last: center;
+    text-align-last: center;
   }
   #intro .caption {
     font-size: 14px;
     margin: 0 auto 18px;
     text-align: justify;
-    -moz-text-align-last: center;
-         text-align-last: center;
+    text-align-last: center;
   }
   #intro .right {
     padding: 5px 25px 43px;
     text-align: center;
-    -moz-text-align-last: center;
-         text-align-last: center;
-    order: 2;
+    text-align-last: center;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
   #intro .left {
     padding-top: 11px;
@@ -107,7 +108,9 @@
   #carts .content_box .img_box {
     min-height: auto;
     margin: 0 auto 13px;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   #carts .content_box .title {
     margin: 0 auto 18px;
@@ -171,8 +174,7 @@
   }
   #membership .title {
     text-align: center;
-    -moz-text-align-last: center;
-         text-align-last: center;
+    text-align-last: center;
     margin: 0 auto 12px;
     max-width: 75%;
   }
@@ -267,14 +269,16 @@
   /*================================ footer ================================*/
   footer .content {
     padding: 11px 0 22px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   footer .content .title {
     font-size: 16px;
     line-height: 24px;
     text-align: center;
-    -moz-text-align-last: center;
-         text-align-last: center;
+    text-align-last: center;
     margin: 0 auto 18px;
   }
   footer .content .social img {
@@ -290,4 +294,6 @@
     width: 104px;
   }
 }
-/* Iphone 320 style *//*# sourceMappingURL=responsive.css.map */
+
+/* Iphone 320 style */
+/*# sourceMappingURL=responsive.css.map */
