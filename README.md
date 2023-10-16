@@ -13,4 +13,4 @@ add custom js into assets/js/harmony.js
 
 ## Config DB
 
-Insert Data Db Into panel/database.php
+Insert Data Db Into panel/environment.php
