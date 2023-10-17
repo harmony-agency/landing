@@ -1,8 +1,0 @@
-/* font-weight 900 */
-@font-face {
-  font-family: kiyana;
-  font-style: normal;
-  font-weight: 900;
-  src: url("./kiyana_woff.woff") format("woff"),
-    url("./kiyana_woff2.woff2") format("woff2");
-}

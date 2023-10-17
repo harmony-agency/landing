@@ -2,7 +2,9 @@ $(document).ready(function () {
   console.log("HTML document has been loaded");
   $.ajax("panel/security.php", {
     dataType: "json", // type of response data
-    data: { token: true },
+    data: {
+      token: true
+    },
     success: function (data) {
       // success callback function
       if (data["status"] == true) {
@@ -84,153 +86,46 @@ $("a").click(function (event) {
   var target = $(id).offset().top - offset;
 
   // The magic...smooth scrollin' goodness.
-  $("html, body").animate({ scrollTop: target }, 100);
+  $("html, body").animate({
+    scrollTop: target
+  }, 100);
 
   //prevent the page from jumping down to our section.
   event.preventDefault();
 });
 
-/*===================================== clipboard =====================================*/
-$(".copy_code_btn").click(function (event) {
-  // Get the text field
-  var copyText = document.getElementById("copy_code");
+document.body.onload = function () {
+  preloadMain();
+};
+var i = 0;
 
-  // Select the text field
-  copyText.select();
-  //   copyText.setSelectionRange(0, 99999); // For mobile devices
+function preloadMain() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("loading_progress");
+    var width = 1;
+    var id = setInterval(frame, 10);
 
-  // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-  $(".alert_copy").fadeIn();
-
-  // Alert the copied text
-  const myTimeout2 = setTimeout(myGreeting2, 2000);
-
-  function myGreeting2() {
-    $(".alert_copy").fadeOut();
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        $("#preload").fadeOut();
+        $("#introduction").fadeIn();
+        $("#introduction").css("display", "flex");
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
   }
-});
-
-/*===================================== starter_video =====================================*/
-$("#starter_video").click(function () {
-  $(".play").fadeOut();
-});
-
-$(".play").click(function () {
-  $(this).fadeOut();
-  $(this).siblings("#starter_video").trigger("play");
-});
-
-/*===================================== counter =====================================*/
-$(".counter").counterUp({
-  delay: 5,
-  time: 1000,
-});
-
-/*===================================== timer =====================================*/
-// The data/time we want to countdown to
-var countDownDate = new Date("Oct 15, 2023 00:00:00").getTime();
-
-// Run myfunc every second
-var myfunc = setInterval(function () {
-  var now = new Date().getTime();
-  var timeleft = countDownDate - now;
-
-  // Calculating the days, hours, minutes and seconds left
-  var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-  // Result is output to the specific element
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("mins").innerHTML = minutes;
-  document.getElementById("secs").innerHTML = seconds;
-
-  // Display the message when countdown is over
-  if (timeleft < 0) {
-    clearInterval(myfunc);
-    document.getElementById("days").innerHTML = "";
-    document.getElementById("hours").innerHTML = "";
-    document.getElementById("mins").innerHTML = "";
-    document.getElementById("secs").innerHTML = "";
-  }
-}, 1000);
-
-/*===================================== swiper =====================================*/
-var testimonial_Swiper = new Swiper(".testimonial_Swiper", {
-  slidesPerView: 3,
-  spaceBetween: 50,
-  centeredSlides: true,
-  loop: true,
-  speed: 2000,
-  preventClicks: true,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: true,
-  // },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 50,
-    },
-  },
-});
-
-/*===================================== click function =====================================*/
-$(".callToAction").click(function () {
-  console.log("click");
-});
-
-/*===================================== hover function =====================================*/
-$(".callToAction").hover(
-  function () {
-    console.log("hover");
-  },
-  function () {
-    console.log("not hover");
-  }
-);
-
-/*===================================== scripts for mobile =====================================*/
-if (window.matchMedia("(max-width: 768px)").matches) {
-  console.log("mobile scripts");
 }
 
-$(window).on("load", function () {
-  console.log("all content (e.g. images) has been loaded.");
-});
+$(".start_btn_box").on("click", function () {
+  $("#introduction").hide();
+  $("#membership").fadeIn();
+})
 
-/*===================================== use lottie animation =====================================*/
-var animation = {
-  container: document.getElementById("myAnimation"), // required
-  path: "assets/animation/data.json", // required
-  renderer: "svg", // required
-  loop: false, // optional
-  autoplay: true, // optional
-  name: "Demo Animation", // optional
-};
-var anim;
-anim = lottie.loadAnimation(animation);
-
-/*===================================== input animation =====================================*/
-
-const handleChange = (event) => {
-  $(".form-control").classList.toggle("has-value", event.target.value);
-};
-$(".form-control").keyup(function () {
-  $(".place_moving").css("translate", "0 -50px");
+particlesJS.load("particles-js", "assets/js/particlesjs-config.json", function () {
+  console.log("callback - particles.js config loaded");
 });

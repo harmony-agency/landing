@@ -7,17 +7,23 @@
       content="width=device-width,height=window.innerHeight, initial-scale=1.0 , maximum-scale=1 , minimum-scale=1, user-scalable=0"
     />
     <meta name="token" content="harmony" />
-    <title>نام</title>
-    <meta name="description" content="توضیحات" />
-    <link rel="icon" type="icon" href="assets/images/favicon.png" />
+    <title>لايف استار</title>
+    <meta name="description" content="LifeStar" />
+    <link rel="icon" type="icon" href="assets/images/favicon.ico" />
 
     <!-- =============== css files =============== -->
     <link rel="stylesheet" href="assets/css/aos.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="assets/css/flip.min.css" />
-    <link rel="stylesheet" href="assets/css/toastr.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      #introduction .linear_box {
+        background-image: linear-gradient(
+          to bottom,
+          rgba(255, 0, 0, 0),
+          rgb(255 255 255 / 53%)
+        );
+      }
+    </style>
 
     <!-- Google Tag Manager -->
     <script>
@@ -35,619 +41,170 @@
     <!-- End Google Tag Manager -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KTMZZKT"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Design by Harmony Agency -->
-
-    <!-- =============== header =============== -->
-    <header>
-      <div class="container">
-        <div class="content">
-          <p class="title">title</p>
-          <div class="info">
-            <a href="#">
-              <button class="btn callToAction">callToAction</button>
-            </a>
-            <a href="#">
-              <button class="btn callToAction2">callToAction2</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <!-- =============== main =============== -->
     <main>
-      <!-- =============== intro =============== -->
-      <section id="intro">
+      <div id="particles-js"></div>
+
+      <!-- =============== preload =============== -->
+      <section id="preload">
         <div class="container">
-          <div class="content row">
-            <div class="col-lg-6 col-sm-12 right">
-              <h2 class="title" data-aos="zoom-in" data-aos-duration="1000">
-                title
-              </h2>
-              <p
-                class="caption"
-                data-aos="fade-up"
-                data-aos-easing="ease"
-                data-aos-delay="100"
-                data-aos-duration="1000"
-              >
-                caption
+          <div class="content">
+            <div class="loading_box">
+              <div class="loading_bar">
+                <div id="loading_progress"></div>
+              </div>
+              <p class="loading_title waveTextAnimated">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
               </p>
-              <a href="#">
-                <button class="btn callToAction">callToAction</button>
-              </a>
             </div>
-            <div class="col-lg-6 col-sm-12 left">
-              <img src="" alt="" class="" loading="lazy" />
-            </div>
+            <img
+              src="assets/images/lifestar_logo.png"
+              alt="lifestar_logo"
+              class="lifestar_logo"
+            />
           </div>
         </div>
       </section>
 
-      <!-- =============== carts =============== -->
-      <section id="carts">
+      <!-- =============== introduction =============== -->
+      <section id="introduction">
         <div class="container">
-          <p class="section_title">title</p>
-          <div class="content row">
-            <div class="col-lg-3 col-sm-12 first">
-              <div
-                class="content_box"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                data-aos-delay="100"
-              >
-                <div class="img_box">
-                  <img src="" alt="" class="" loading="lazy" />
-                </div>
-                <p class="title">caption</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-12">
-              <div
-                class="content_box"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                data-aos-delay="200"
-              >
-                <div class="img_box">
-                  <img src="" alt="" class="" loading="lazy" />
-                </div>
-                <p class="title">caption</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-12">
-              <div
-                class="content_box"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                data-aos-delay="300"
-              >
-                <div class="img_box">
-                  <img src="" alt="" class="" loading="lazy" />
-                </div>
-                <p class="title">caption</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-12 last">
-              <div
-                class="content_box"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                data-aos-delay="400"
-              >
-                <div class="img_box">
-                  <img src="" alt="" class="" loading="lazy" />
-                </div>
-                <p class="title">caption</p>
-              </div>
+          <div class="linear_box">
+            <div class="content">
+              <img
+                src="assets/images/lifestar_logo.png"
+                alt="lifestar_logo"
+                class="lifestar_logo"
+              />
+              <div class="line"></div>
+              <img
+                src="assets/images/text.png"
+                alt="text_img"
+                class="text_img"
+              />
+              <p class="title d-none">ستــاره ها تغییر میدهنـد</p>
+              <p class="caption">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است
+              </p>
             </div>
           </div>
+          <div class="start_btn_box">شروع بازي</div>
         </div>
       </section>
-
-      <!-- =============== timer =============== -->
-      <div class="timer">
-        <div class="time">
-          <span id="days"></span>: <span id="hours"></span>:
-          <span id="mins"></span>:
-          <span id="secs"></span>
-        </div>
-        <div class="timer-details">
-          <span>ثانیه</span>
-          <span>دقیقه</span>
-          <span>ساعت</span>
-          <span>روز</span>
-        </div>
-      </div>
-
-      <!-- =============== counter =============== -->
-      <section id="counter">
-        <div class="container text-center">
-          <p class="section_title" data-aos="zoom-in" data-aos-duration="1000">
-            title
-          </p>
-          <div class="content row">
-            <div class="col-lg-3 col-sm-12">
-              <div class="counter_box">
-                <div class="counterTitle">بیش از</div>
-                <div class="value counter">3000</div>
-                <div class="counterCaption">زبان‌آموز</div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12">
-              <div class="counter_box">
-                <div class="counterTitle">بیش از</div>
-                <div class="value counter">33000</div>
-                <div class="counterCaption">
-                  جلسه برگزار شده در اپلیکیشن ویتاک
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12">
-              <div class="counter_box">
-                <div class="counterTitle">بیش از</div>
-                <div class="value counter">45000</div>
-                <div class="counterCaption">ساعت ویدیو دیده شده</div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12">
-              <div class="counter_box last_box">
-                <div class="counterTitle">بیش از</div>
-                <div class="value counter">200</div>
-                <div class="counterCaption">شهر ایران و جهان</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <button
-        class="btn callToAction"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        modal btn
-      </button>
-
-      <!-- Design by Harmony Agency -->
 
       <!-- =============== membership =============== -->
       <section id="membership">
+        <img src="assets/images/top_img.png" alt="" class="top_image" />
+        <img src="assets/images/bottom_img.png" alt="" class="bottom_image" />
         <div class="container">
-          <div class="content row">
-            <div class="col-lg-6 col-sm-12 right">
-              <!-- step1 -->
-              <div class="form step1">
-                <h2 class="title" data-aos="zoom-in" data-aos-duration="1000">
-                  title
-                </h2>
-                <p
-                  class="caption"
-                  data-aos="fade-up"
-                  data-aos-easing="ease"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                >
-                  caption
-                </p>
-                <form id="subscribers">
-                  <div class="form-group">
-                    <label for="fullName" class="inp_label"
-                      >نام و نام خانوادگی</label
-                    >
+          <div class="content">
+            <img
+              src="assets/images/lifestar_logo.png"
+              alt="lifestar_logo"
+              class="lifestar_logo"
+            />
+            <!-- step1 -->
+            <div class="steps step1">
+              <p class="title">شمــــاره تلفن هــمراه خـود را وارد کنید</p>
+              <form id="subscribers">
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="شماره تماس"
+                    autocomplete="off"
+                  />
+                </div>
+                <button type="submit" class="btn callToAction">ارسال کد</button>
+              </form>
+            </div>
+            <!-- step2 -->
+            <div class="steps step2">
+              <p class="title">
+                کد ارسال شده به شماره
+                <span class="enteredPhone"></span>
+                را وارد کنید
+              </p>
+              <p class="false_number">
+                شماره اشتباه است؟
+                <span id="editMobile">اصلاح شماره تلفن</span>
+              </p>
+              <form action="" id="subscribers_confirm">
+                <div class="form-group confirm_box">
+                  <input
+                    hidden
+                    type="hidden"
+                    name="confirm"
+                    id="confirm"
+                    class="input_code"
+                  />
+                  <div class="userInput">
                     <input
-                      type="text"
-                      class="form-control"
-                      id="fullName"
-                      name="fullName"
+                      type="number"
+                      id="ist"
+                      maxlength="1"
+                      onkeyup="clickEvent(this,'sec')"
+                      class="code_boxs"
                       autocomplete="off"
                     />
-                  </div>
-                  <div class="form-group">
-                    <label for="fullName" class="inp_label">شماره تماس</label>
                     <input
-                      type="tel"
-                      class="form-control"
-                      id="phoneNumber"
-                      name="phoneNumber"
+                      type="number"
+                      id="sec"
+                      maxlength="1"
+                      onkeyup="clickEvent(this,'third')"
+                      class="code_boxs"
                       autocomplete="off"
                     />
-                  </div>
-                  <div class="form-group">
-                    <label for="subject" class="inp_label">موضوع</label>
                     <input
-                      type="text"
-                      class="form-control"
-                      id="subject"
-                      name="subject"
+                      type="number"
+                      id="third"
+                      maxlength="1"
+                      onkeyup="clickEvent(this,'fourth')"
+                      class="code_boxs"
                       autocomplete="off"
                     />
-                  </div>
-                  <div class="form-group">
-                    <label for="email" class="inp_label">ایمیل</label>
                     <input
-                      type="text"
-                      class="form-control"
-                      id="email"
-                      name="email"
+                      type="number"
+                      id="fourth"
+                      maxlength="1"
+                      class="code_boxs"
                       autocomplete="off"
+                      maxlength="1"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     />
                   </div>
-                  <button type="submit" class="btn callToAction">
-                    ثبت اطلاعات
-                  </button>
-                </form>
-              </div>
-              <!-- step2 -->
-              <div class="form step2">
-                <p class="title">
-                  کد تایید ارسال شده به
-                  <span class="enteredPhone">09125556633</span>
-                  را وارد کنید
-                </p>
-                <p class="false_number">
-                  شماره رو اشتباه وارد کردی؟
-                  <br />
-                  <span id="editMobile">اصلاح شماره تلفن</span>
-                </p>
-                <form action="" id="subscribers_confirm">
-                  <div class="form-group confirm_box">
-                    <input
-                      hidden
-                      type="hidden"
-                      name="confirm"
-                      id="confirm"
-                      class="input_code"
-                    />
-                    <div class="userInput">
-                      <input
-                        type="number"
-                        id="ist"
-                        maxlength="1"
-                        onkeyup="clickEvent(this,'sec')"
-                        class="code_boxs"
-                        placeholder="-"
-                        autocomplete="off"
-                      />
-                      <input
-                        type="number"
-                        id="sec"
-                        maxlength="1"
-                        onkeyup="clickEvent(this,'third')"
-                        class="code_boxs"
-                        placeholder="-"
-                        autocomplete="off"
-                      />
-                      <input
-                        type="number"
-                        id="third"
-                        maxlength="1"
-                        onkeyup="clickEvent(this,'fourth')"
-                        class="code_boxs"
-                        placeholder="-"
-                        autocomplete="off"
-                      />
-                      <input
-                        type="number"
-                        id="fourth"
-                        maxlength="1"
-                        class="code_boxs"
-                        placeholder="-"
-                        autocomplete="off"
-                        maxlength="1"
-                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                      />
-                    </div>
-                  </div>
-                  <div class="again_box">
-                    <p id="smsTimer">02:00</p>
-                    <div id="sendAgain">
-                      ارسال مجدد کد
-                      <img src="" alt="" class="" loading="lazy" />
-                    </div>
-                  </div>
-                  <button id="otpValidBtn" type="submit" class="callToAction">
-                    ثبت و ادامه
-                  </button>
-                </form>
-              </div>
-              <!-- step3 -->
-              <div class="form step3">
-                <p class="last_title">
-                  <span class="message-name"></span> عزیز
-                </p>
-                <p>اطلاعات شما با موفقیت ثبت شد</p>
-              </div>
-            </div>
-            <div class="col-lg-6 col-sm-12 left">
-              <img src="" alt="" class="" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Design by Harmony Agency -->
-
-      <!-- =============== testimonial =============== -->
-      <section id="testimonial">
-        <div class="container">
-          <p class="section_title" data-aos="zoom-in" data-aos-duration="1000">
-            title
-          </p>
-          <div class="swiper testimonial_Swiper">
-            <div class="swiper-wrapper">
-              <!-- slide1 -->
-              <div class="swiper-slide">
-                <div class="slide_content">slide_content</div>
-              </div>
-              <!-- slide2 -->
-              <div class="swiper-slide">
-                <div class="slide_content">slide_content</div>
-              </div>
-              <!-- slide3 -->
-              <div class="swiper-slide">
-                <div class="slide_content">slide_content</div>
-              </div>
-              <!-- slide4 -->
-              <div class="swiper-slide">
-                <div class="slide_content">slide_content</div>
-              </div>
-              <!-- slide5 -->
-              <div class="swiper-slide">
-                <div class="slide_content">slide_content</div>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =============== animation =============== -->
-      <section id="animation">
-        <div class="conatiner">
-          <div id="myAnimation"></div>
-        </div>
-      </section>
-      <!-- Design by Harmony Agency -->
-
-      <!-- =============== faq =============== -->
-      <section id="faq">
-        <div class="container">
-          <h2 class="section_title">title</h2>
-          <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq1">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question1"
-                  aria-expanded="false"
-                  aria-controls="question1"
-                >
-                  title
+                </div>
+                <div class="again_box">
+                  <p id="smsTimer">02:00</p>
+                  <div id="sendAgain">ارسال مجدد کد</div>
+                </div>
+                <button id="otpValidBtn" type="submit" class="callToAction">
+                  ارسال کد
                 </button>
-              </h2>
-              <div
-                id="question1"
-                class="accordion-collapse collapse show"
-                aria-labelledby="faq1"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">caption</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq2">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question2"
-                  aria-expanded="false"
-                  aria-controls="question2"
-                >
-                  title
-                </button>
-              </h2>
-              <div
-                id="question2"
-                class="accordion-collapse collapse"
-                aria-labelledby="faq2"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">caption</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq3">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question3"
-                  aria-expanded="false"
-                  aria-controls="question3"
-                >
-                  title
-                </button>
-              </h2>
-              <div
-                id="question3"
-                class="accordion-collapse collapse"
-                aria-labelledby="faq3"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">caption</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq4">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question4"
-                  aria-expanded="false"
-                  aria-controls="question4"
-                >
-                  title
-                </button>
-              </h2>
-              <div
-                id="question4"
-                class="accordion-collapse collapse"
-                aria-labelledby="faq4"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">caption</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq5">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question5"
-                  aria-expanded="false"
-                  aria-controls="question5"
-                >
-                  title
-                </button>
-              </h2>
-              <div
-                id="question5"
-                class="accordion-collapse collapse"
-                aria-labelledby="faq5"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">caption</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq6">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question6"
-                  aria-expanded="false"
-                  aria-controls="question6"
-                >
-                  title
-                </button>
-              </h2>
-              <div
-                id="question6"
-                class="accordion-collapse collapse"
-                aria-labelledby="faq6"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">caption</div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- =============== footer =============== -->
-    <footer>
-      <div class="container">
-        <div class="content">
-          <p class="title">title</p>
-          <div class="social">
-            <a href="https://eitaa.com/..." target="_blank">
-              <img src="assets/images/whatsapp.png" alt="" />
-            </a>
-            <a href="https://www.instagram.com/..." target="_blank">
-              <img src="assets/images/instagram.png" alt="" />
-            </a>
-            <a href="https://t.me/..." target="_blank">
-              <img src="assets/images/telegram.png" alt="" />
-            </a>
-            <a href="tel:02122002200"> 021-22002200 </a>
-            <a href="mailto:test@gmail.com"> test@gmail.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="copyright">
-        <a
-          href="https://harmony.agency/?utm_source=designbyharmony&amp;utm_medium=badge&amp;utm_campaign=...-landing"
-          target="_blank"
-        >
-          <span class="hover-company desktop">
-            <img src="assets/images/harmony-name.png" loading="lazy" alt="" />
-          </span>
-          <img
-            class="logo"
-            src="assets/images/harmony.png"
-            loading="lazy"
-            alt=""
-          />
-          <span class="hover-company desktop">Design by</span>
-        </a>
-      </div>
-    </footer>
-
-    <!-- =============== Modal =============== -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">modal content</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Design by Harmony Agency -->
-
     <!-- =============== scripts =============== -->
     <script src="assets/js/aos.js"></script>
-    <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/lottie.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.validate.min.js"></script>
-    <script src="assets/js/jquery.countup.min.js"></script>
-    <script src="assets/js/sweetalert.min.js"></script>
-    <script src="assets/js/swiper.min.js"></script>
-    <script src="assets/js/waypoint.js"></script>
-    <script src="assets/js/flip.min.js"></script>
-    <script src="assets/js/persian-datepicker.min.js"></script>
-    <script src="assets/js/persian-date.min.js"></script>
     <script src="assets/js/toastr.min.js"></script>
-    <script src="assets/js/form.js?v=0.0"></script>
-    <script src="assets/js/harmony.js?v=0.0"></script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/form.js"></script>
+    <script src="assets/js/harmony.js"></script>
   </body>
 </html>

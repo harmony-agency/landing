@@ -1,9 +1,22 @@
 // ============ otp inputs ============
-let el1 = "",
-  el2 = "",
-  el3 = "";
-el4 = "";
-el_sum = "";
+let el1,
+  el2,
+  el3,
+  el4,
+  el_sum = "";
+
+
+$("#subscribers_confirm .userInput input").keyup(function (e) {
+  let key = e.keyCode || e.charCode;
+  if (key == 8 || key == 46 || key == 37 || key == 40) {
+    // Backspace or Delete or Left Arrow or Down Arrow
+    $(this).prev().focus();
+  } else if (key == 38 || key == 39 || $(this).val() != "") {
+    // Right Arrow or Top Arrow or Value not empty
+    $(this).next().focus();
+  }
+})
+
 $("input#ist").keyup(function () {
   el1 = $(this).val().substr(0, 2);
   buildel4();
@@ -20,10 +33,23 @@ $("input#fourth").keyup(function () {
   el4 = $(this).val().substr(0, 2);
   buildel4();
 });
+
+function buildel4() {
+  let el_sum = el1 + el2 + el3 + el4;
+  $("input#code").attr("value", el_sum);
+}
+
+function clickEvent(first, last) {
+  if (first.value.length) {
+    document.getElementById(last).focus();
+  }
+}
+
 function buildel4() {
   let el_sum = el1 + el2 + el3 + el4;
   $("input#confirm").attr("value", el_sum);
 }
+
 function clickEvent(first, last) {
   if (first.value.length) {
     document.getElementById(last).focus();
@@ -56,39 +82,24 @@ $(document).ready(function () {
 
   //subscribers validate
   $("#subscribers").validate({
-    // initialize the plugin
-    fullName: {
-      required: true,
-    },
-    phoneNumber: {
-      required: true,
-      minlength: 11,
-      maxlength: 11,
-    },
-    subject: {
-      required: true,
-    },
-    email: {
-      required: true,
+    rules: {
+      phoneNumber: {
+        required: true,
+        minlength: 11,
+        maxlength: 11,
+      },
     },
     messages: {
-      fullName: {
-        required: "لطفا نام خود را وارد کنید",
-      },
       phoneNumber: {
         required: "لطفا شماره تماس خود را وارد کنید",
         minlength: "شماره تماس وارد شده معتبر نیست",
         maxlength: "شماره تماس وارد شده معتبر نیست",
       },
-      subject: {
-        required: "لطفا نام موضوع خود را وارد کنید",
-      },
-      email: {
-        required: "لطفا ایمیل خود را وارد کنید",
-      },
     },
     submitHandler: function () {
-      form_otp();
+      // form_otp();
+      $(".steps.step1").hide();
+      $(".steps.step2").fadeIn();
     },
   });
   //subscribers_confirm validate
@@ -130,7 +141,9 @@ function form_otp() {
   $.ajax({
     type: "POST",
     url: "panel/otp.php",
-    headers: { token: token },
+    headers: {
+      token: token
+    },
     data: formDataOtp,
     dataType: "json",
     encode: true,
@@ -138,8 +151,8 @@ function form_otp() {
     if (data["success"] == true) {
       countdown();
       $(".errorValidate").hide();
-      $(".form.step1").hide();
-      $(".form.step2").fadeIn();
+      $(".steps.step1").hide();
+      $(".steps.step2").fadeIn();
       $(".enteredPhone").html($("#phoneNumber").val());
     } else {
       toastr.error(" این شماره قبلا وارد شده است");
@@ -150,10 +163,7 @@ function form_otp() {
 // ============ form_submit ============
 function form_submit() {
   var formDataSubscriber = {
-    fullName: $("#fullName").val(),
     phoneNumber: persianToEnglish($("#phoneNumber").val()),
-    subject: persianToEnglish($("#subject").val()),
-    email: persianToEnglish($("#email").val()),
     confirm: persianToEnglish($("#confirm").val()),
     utm_source: sessionStorage.getItem("utm_source"),
     utm_campaign: sessionStorage.getItem("utm_campaign"),
@@ -174,8 +184,7 @@ function form_submit() {
       // window.dataLayer.push({
       //   event: "formSubmission",
       // });
-      $(".form.step2").hide();
-      $(".form.step3").css("display", "flex");
+      $("#membership").hide();
     } else {
       toastr.error(data["message"]);
     }
@@ -224,6 +233,7 @@ $("#editMobile").click(function () {
 
 // ============ otp timer function ============
 var interval;
+
 function countdown() {
   clearInterval(interval);
   interval = setInterval(function () {
